@@ -1,0 +1,404 @@
+/*---------------Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300&display=swap');
+
+/*---------------Body & HTML Styling*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Barlow Condensed", sans-serif;
+    color: #fff;
+}
+
+body {
+    background: black;
+}
+
+html {
+    height: 100%;
+    font-size: 12px;
+    scroll-behavior: smooth;
+}
+
+section {
+    padding: 3.9rem 0;
+}
+
+img {
+    width: 100%;
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+p {
+    font-size: 1.5rem;
+}
+
+ul {
+    list-style: none;
+}
+
+.text-black {
+    color: black;
+}
+
+.container {
+    width: 100%;
+    max-width: 122.5rem;
+    margin: 0 auto;
+    padding: 0 2.4rem;
+}
+
+/* base.html */
+/*---------------Header*/
+
+.main-logo-link {
+    width: fit-content;
+}
+
+/* from Bulma */
+.icon {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+/* Index Page*/
+/*-------------Hero*/
+.hero {
+    width: 100%;
+    height: 100vh;
+    background: url('/media/beef1.jpg') center no-repeat rgba(0, 0, 0, .2);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.sub-headline {
+    font-size: 8.5rem;
+    font-weight: 200;
+    letter-spacing: 2px;
+    opacity: 0;
+    animation: fadeUp .5s forwards;
+    animation-delay: .7s;
+}
+
+.headline {
+    font-size: 5.5rem;
+    text-transform: uppercase;
+    letter-spacing: .5rem;
+    animation: scale .8s forwards;
+
+
+}
+
+.single-animation {
+    opacity: 0;
+    animation: fadeDown .5s forwards;
+    animation-delay: 1.5s;
+}
+
+.seperator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.line {
+    width: 100%;
+    max-width: 20rem;
+    height: .20rem;
+    background-color: #fff;
+    position: relative;
+    opacity: 0;
+    animation: grow 2s forwards;
+    animation-delay: 1s;
+}
+
+.burger {
+    font-size: 2rem;
+    color: #fff;
+    margin: 0 10px;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+    animation-delay: .9s;
+
+}
+
+.headline-description h3 {
+    text-transform: uppercase;
+    margin-bottom: 1.2rem;
+    letter-spacing: 3px;
+}
+
+.btn {
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.cta-btn {
+    padding: 1rem 2rem;
+    font-size: 2rem;
+    transition: background-color .5s;
+}
+
+.btn:hover,
+.btn:focus {
+    color: #fff;
+    background-color: rgb(1, 4, 43);
+
+}
+
+.btn-black {
+    background: black;
+    color: white;
+}
+
+.btn-outline-black {
+    background: white;
+    color: black !important;
+    /* use important to override link colors for <a> elements */
+    border: 1px solid black;
+}
+
+.btn-outline-black:hover,
+.btn-outline-black:active,
+.btn-outline-black:focus {
+    background: black;
+    color: white !important;
+}
+
+.shop-now-button:hover,
+.shop-now-button:active,
+.shop-now-button:focus,
+.btn-black:hover,
+.btn-black:active,
+.btn-black:focus {
+    background: #222;
+    color: white;
+}
+
+.text-black {
+    color: #000 !important;
+}
+
+.border-black {
+    border: 1px solid black !important;
+}
+
+.bg-black {
+    background: #000 !important;
+}
+
+/*------------Our Burgers*/
+
+.burger-imgages {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1.5rem;
+}
+
+.about-headline {
+    text-align: center;
+    margin: 3rem;
+}
+
+.our-burgers .about-headline {
+    margin-top: 6rem;
+}
+
+.section-info {
+    text-align: center;
+}
+
+.section-description {
+    margin-bottom: 3rem;
+}
+
+.section-description p {
+    margin-bottom: 2rem;
+}
+
+.menu-btn {
+    font-size: 2rem;
+    position: relative;
+    transition: background-color .5s;
+}
+
+/*--------------Inbetween Banner*/
+.banner-images {
+    background: url('/media/burger.jpg') center no-repeat;
+    background-size: cover;
+    opacity: 0.7;
+}
+
+.banner-fresh {
+    background: url('/media/cooking.jpg') center no-repeat;
+    background-size: cover;
+    opacity: 0.7;
+}
+
+.between {
+    min-height: 65vh;
+    display: flex;
+    align-items: center;
+}
+
+/*--------------About Us*/
+
+.sub-headlines {
+    font-size: 6rem;
+}
+
+.about-us .about-headline {
+    margin-top: 6rem;
+}
+
+.about-us .section-info {
+    display: flex;
+}
+
+.about-us .section-description p {
+    padding: 10px;
+}
+
+/*--------------Ingredients*/
+.ingredients .section-info {
+    display: flex;
+}
+
+.ingredients .section-description p {
+    padding: 10px;
+}
+
+/*--------------reviews*/
+.review .section-info {
+    display: flex;
+}
+
+.review .section-description p {
+    padding: 10px;
+}
+
+/*--------------Footer*/
+
+footer {
+    padding: 3rem 0;
+    color: fff;
+    text-align: center;
+    position: relative;
+}
+
+.footer-content {
+    font-size: 1.5rem;
+}
+
+@media (max-width: 991px) {
+
+    .review .section-info,
+    .ingredients .section-info,
+    .about-us .section-info {
+        display: block;
+    }
+
+    .sub-headline,
+    .sub-headlines {
+        font-size: 4rem;
+    }
+
+    .headline {
+        font-size: 3rem;
+    }
+
+    .menu-header {
+        font-size: 3rem;
+    }
+
+    .tabs.verticle {
+        width: 30%;
+        max-width: 30%;
+    }
+
+    .category {
+        font-size: 1.5rem;
+    }
+}
+
+form {
+    padding: 20px;
+}
+
+.form-control {
+    font-size: 1.5rem;
+}
+
+.card {
+
+    background: #fff;
+    margin: 30px 10px;
+    padding: 20px 15px;
+}
+
+/* Animations */
+
+@keyframes fadeUp {
+    from {
+        transform: translateY(4rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scale {
+    from {
+        transform: scale(5);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes grow {
+    from {
+        width: 0;
+    }
+
+    to {
+        opacity: 1;
+        width: 100%;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeDown {
+    from {
+        transform: translateY(-4rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

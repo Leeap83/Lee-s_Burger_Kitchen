@@ -10,12 +10,163 @@
 {% endblock %}
 
 {% block content %}
+<section class="hero" id="hero">
+    <div class="container">
+        <h2 class="sub-headline">Welcome to</h2>
+        <h1 class="headline">Lee's Burger Kitchen</h1>
+        <div class="headline-description">
+            <div class="seperator">
+                <div class="line line-left"></div>
+                <div class="burger"><i class="fas fa-hamburger fa-lg"></i></div>
+                <div class="line line-right"></div>
+            </div>
+            <div class="single-animation">
+                <h3>Ready to Order?</h3>
+                <a href="#" class="btn btn-secondary btn-lg cta-btn">Place Order</a>
+            </div>
+        </div>
+    </div>
+</section>
 
+<!--Our Burgers-->
+<section class="our-burgers bg-white">
+    <div class="container">
+        <div class="section-info">
+            <div class="section-description animate-right">
+                <div class="about-headline">
+                    <h2 class="sub-headlines text-black">Our Burgers</h2>
+                </div>
+                <p class="text-black">
+                    We have a selection of tasty beef burgers, chicken burgers, Vegetariarn Burgers.
+                    We also have a selection of bites and sides. Why not be creative and create your
+                    own burger using our build a burger - if we like it we might add it to our menu!
+                </p>
+                <a href="" class="menu-btn btn btn-secondary btn-lg">View Menu</a>
+            </div>
+            <div class="burger-imgages padding-right animate-left">
+                <img src="/media/Blue.jpg" alt="burger">
+                <img src="/media/classic-beef.jpg" alt="burger">
+                <img src="/media/katsu.jpg" alt="katsu-Burger">
+                <img src="/media/California.jpg" alt="vegan-Burger">
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!--Image banner-->
+<section class="banner-images between">
+    <div class="container">
+        <div class="about-headline">
+            <div class="animate-top">
+                <h2 class="sub-headline">Delicious</h2>
+            </div>
+            <div class="animate-bottom">
+                <h2 class="headline">Burgers</h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--About Us-->
+<section class="about-us bg-dark">
+    <div class="container">
+        <div class="section-info">
+            <div class="section-description padding-right animate-left">
+                <div class="about-headline">
+                    <h2 class="sub-headlines text-white">About US</h2>
+                </div>
+                <p class="text-white">
+                    We are a local independent business with a passion for burgers, our chefs started as a
+                    pop up stand at festivals and markets, but as word grew so did our business.
+                </p>
+                <a href="" class="menu-btn btn btn-secondary btn-lg">About us</a>
+            </div>
+            <div class="burger-info-img animate-right">
+                <img src="/media/about.jpg" alt="About-us-image">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--Inbetween banner-->
+<section class="banner-fresh between">
+    <div class="container">
+        <div class="about-headline">
+            <div class="animate-top">
+                <h2 class="sub-headline">Handmade</h2>
+            </div>
+            <div class="animate-bottom">
+                <h2 class="headline">Burgers</h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--Ingredients-->
+<section class="ingredients bg-white">
+    <div class="container">
+        <div class="section-info">
+            <div class="ingredients-img animate-left">
+                <img src="/media/fresh.jpg" alt="burger-buns">
+            </div>
+            <div class="section-description animate-right">
+                <div class="about-headline">
+                    <h2 class="sub-headlines text-black">Fresh Ingredients</h2>
+                </div>
+                <p class="text-black">
+                    All our burgers are homemade fresh every day with quality ingredients sourced from
+                    local suppliers. As a local business it is only right that we support the local
+                    community.
+                </p>
+                <a href="" class="menu-btn btn btn-secondary btn-lg">Our Suppliers</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--Reviews-->
+
+<section class="review bg-dark">
+    <div class="container">
+        <div class="section-info">
+            <div class="section-description animate-left">
+                <div class="about-headline">
+                    <h2 class="sub-headlines text-white">Don't Believe us?</h2>
+                </div>
+                <p class="text-white">
+                    We are not ones for gossip! See what people have to say about us, if you want to leave
+                    feedback good or bad we would like to hear what you have to say.
+                </p>
+                <a href="" class="menu-btn btn btn-secondary btn-lg">Reviews</a>
+            </div>
+            <div class="review-img animate-right">
+                <img src="/media/review.jpg" alt="thumbs-up-down" style="height: 400px;">
+            </div>
+        </div>
+    </div>
+</section>
 
 {% endblock %}
 
 {% block postloadjs %}
 {{ block.super }}
+<script type="text/javascript">
+    window.sr = ScrollReveal();
 
+    sr.reveal('.animate-left', {
+        origin: 'left',
+        duration: 1000,
+        distance: '25rem',
+        delay: 200
+    });
+
+    sr.reveal('.animate-right', {
+        origin: 'right',
+        duration: 1000,
+        distance: '25rem',
+        delay: 400
+    });
+</script>
 
 {% endblock %}
