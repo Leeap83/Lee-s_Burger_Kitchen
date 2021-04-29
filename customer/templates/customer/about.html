@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<section class="about-hero" id="hero">
+    <div class="container"></div>
+</section>
+
+<section class="our-story bg-white">
+    <div class="container">
+        <div class="col-12 col-md-8 col-lg-6 offset-lg-3">
+            <div class="section-info">
+                <div class="section-description">
+                    <div class="about-headline">
+                        <h2 class="sub-headline text-black">Our Story</h2>
+                    </div>
+                    <h3 class="text-black headlines">Who is LBK?</h3>
+                    <p class="text-black">
+                        Lee's Burger Kitchen or LBK as we are commonly known is named after the founder/head chef 
+                        who started making homemade Burgers in his kitchen. LBK first started as a pop up business at markets, 
+                        festivals local events. Eventually as our reputation grew so did demand, and we eventually opened our 
+                        first LBK in the heart of Shrewsbury Town Centre.
+                    </p>
+                    <hr>
+                    <h3 class="text-black headlines">What makes us different?</h3>
+                    <p class="text-black">
+                        Easy it's the taste! <br>
+                        Freshly made beef patties + locally sourced produce = one tasty burger. We like
+                        to experiment with flavours and create a burger that not only we enjoy but hopefully so do our customers.
+                        We also encourage our customers to create their own burger and if we like it we'll add it to our menu.  
+                    </p>
+                    <a href="" class="btn btn-lg btn-secondary">Create you own</a>
+                    <hr>
+                </div>
+            </div>
+            <div class="contact-details">
+                <h2 class="headlines text-black text-center">Contact Us</h2>
+                <p class="text-black"><i class="text-black fa-lg fas fa-home"></i>: LBK, 8 Castle Street, Shrewsbury, SY1 2BQ</p>
+                <p class="text-black"><i class="text-black fa-lg fas fa-phone-square-alt"></i>: 01743 273 308</p>
+                <p class="text-black"><i class="text-black fa-lg fas fa-envelope"></i>: enquiry@LBK.com</p>
+            </div>
+            <hr>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+
+<!-- <script type="text/javascript">
+    $('.btt-link').click(function(e) {
+        window.scrollTo(0,0)
+    })
+</script>
+
+<script type="text/javascript">
+    window.sr = ScrollReveal();
+
+    sr.reveal('.animate-left', {
+        origin: 'left',
+        duration: 1000,
+        distance: '25rem',
+        delay: 200
+    });
+
+    sr.reveal('.animate-right', {
+        origin: 'right',
+        duration: 1000,
+        distance: '25rem',
+        delay: 400
+    });
+</script> -->
+
+{% endblock %}

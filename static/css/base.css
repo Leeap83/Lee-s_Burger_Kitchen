@@ -92,6 +92,7 @@ strong {
     opacity: 0;
     animation: fadeUp .5s forwards;
     animation-delay: .7s;
+    text-transform: uppercase;
 }
 
 .headline {
@@ -99,8 +100,6 @@ strong {
     text-transform: uppercase;
     letter-spacing: .5rem;
     animation: scale .8s forwards;
-
-
 }
 
 .single-animation {
@@ -426,6 +425,26 @@ input[name='q']::placeholder {
     color: red;
 }
 
+/* About Us Page */
+.about-hero {
+    width: 100%;
+    height: 300px;
+    background: url('/media/about.jpg') center no-repeat rgba(0, 0, 0, .2);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.headlines {
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: .5rem;   
+}
+
+.our-story p {
+    font-size: 1.8rem;
+}
 
 /* Media Queries */
 @media (max-width: 991px) {
@@ -455,6 +474,10 @@ input[name='q']::placeholder {
     }
 
     .category {
+        font-size: 1.5rem;
+    }
+    
+    .our-story p {
         font-size: 1.5rem;
     }
 }
