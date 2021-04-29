@@ -92,9 +92,9 @@
                 <div class="content">
                     <h2 class="card-title text-white">{{ product.name }}</h2>
                     <p class="card-text text-white">{{ product.description }}.</p>
-                    <p class="lead mb-0 text-white font-weight-bold">£{{ product.price }}</p>
-                    <a href="" class="btn btn-secondary">More Info</a>
-                    <a href="" class="btn btn-secondary">Add to bag</a>
+                    <p class="card-text text-white font-weight-bold">£{{ product.price }}</p>
+                    <a href="{% url 'product_details' product.id %}" class="btn btn-lg btn-secondary m-2">More Info</a>
+                    <a href="" class="btn btn-lg btn-secondary">Add to bag</a>
                 </div>
             </div>
             {% endfor %}

@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid bg-white">
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <a href="{% url 'products' %}" class="btn btn-lg m-2 btn-secondary" type="button">Close</a>
+    </div>
+    <div class="row">
+        <div class="col-12 col-md-6 col-lg-4 offset-lg-4">
+            <div class="image-container my-5">
+                {% if product.image %}
+                <a href="{{ product.image_url }}" target="_blank">
+                    <img src="{{ product.image_url }}" class="card-img-top" alt="{{ product.name }}">
+                </a>
+                {% else %}
+                <a href="">
+                    <img src="{{ MEDIA_URL }}noimage.png" class="card-img-top" alt="{{ product.name }}">
+                </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-md6 col-lg-4 offset-lg-4">
+            <div class="product-details-container text-black">
+                <p class="text-black"><strong>Name: </strong>{{ product.name }}</p>
+                <p class="loud text-black"><strong>Price: </strong>£{{ product.price }}</p>
+                <p class="text-muted text-black"><strong>Category: </strong>{{ product.category.friendly_name  }}</small>
+                <h4><strong>Description: </strong></h4>
+                <p class="text-black">{{ product.description }}</p>
+                <h4><strong>Ingredients: </strong></h4>
+                <p class="text-black">{% for ingredients in product.ingredients.all %}{{ ingredients }} <br> {% endfor%}</p>
+                {% if product.vegetarian == True %}
+                <p class="text-black"><Strong>Suitable for vegetarians: </Strong><i class="fas fa-check"></i></p>
+                {% else %}
+                <p class="text-black"><Strong>Suitable for vegetarians: </Strong><i class="fas fa-times text-red"></i></p>
+                {% endif %}               
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+
+
+{% endblock %}

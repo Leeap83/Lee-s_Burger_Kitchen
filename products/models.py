@@ -25,7 +25,8 @@ class Product(models.Model):
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
     vegetarian = models.BooleanField()
-    ingredients = models.ManyToManyField('Ingredients')
+    ingredients = models.ManyToManyField(
+        'Ingredients', related_name='ingredients', blank=True)
 
     def __str__(self):
         return self.name

@@ -53,6 +53,10 @@ ul {
     padding: 0 2.4rem;
 }
 
+strong {
+    color: #000;
+}
+
 /* base.html */
 /*---------------Header*/
 
@@ -404,6 +408,24 @@ input[name='q']::placeholder {
     margin-top: -40px;
     transition-delay: 0.3s;
 }
+
+/* Product Details */
+.product-details-container p, h4 {
+    font-size: 2rem;
+}
+
+.fa-check {
+    color: green;
+}
+
+.close-right {
+    right: 0;
+}
+
+.text-red {
+    color: red;
+}
+
 
 /* Media Queries */
 @media (max-width: 991px) {
