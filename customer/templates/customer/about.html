@@ -5,7 +5,11 @@
 <section class="about-hero" id="hero">
     <div class="container"></div>
 </section>
-
+<div class="container-fluid bg-white">
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <a href="{% url 'home' %}" class="btn btn-lg m-2 btn-secondary" type="button">Close</a>
+    </div>
+</div>
 <section class="our-story bg-white">
     <div class="container">
         <div class="col-12 col-md-8 col-lg-6 offset-lg-3">
@@ -47,29 +51,5 @@
 
 {% block postloadjs %}
 {{ block.super }}
-
-<!-- <script type="text/javascript">
-    $('.btt-link').click(function(e) {
-        window.scrollTo(0,0)
-    })
-</script>
-
-<script type="text/javascript">
-    window.sr = ScrollReveal();
-
-    sr.reveal('.animate-left', {
-        origin: 'left',
-        duration: 1000,
-        distance: '25rem',
-        delay: 200
-    });
-
-    sr.reveal('.animate-right', {
-        origin: 'right',
-        duration: 1000,
-        distance: '25rem',
-        delay: 400
-    });
-</script> -->
 
 {% endblock %}
