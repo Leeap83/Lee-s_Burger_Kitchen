@@ -145,11 +145,24 @@
         </div>
     </div>
 </section>
+<!-- Return to top -->
+<div class="btt-button rounded-0 d-grid gap-2 d-md-flex justify-content-md-end">
+    <a class="btt-link">
+        <i class="fas fa-arrow-up fa-lg text-white m-3"></i>
+    </a>
+</div>
 
 {% endblock %}
 
 {% block postloadjs %}
 {{ block.super }}
+
+<script type="text/javascript">
+    $('.btt-link').click(function(e) {
+        window.scrollTo(0,0)
+    })
+</script>
+
 <script type="text/javascript">
     window.sr = ScrollReveal();
 
