@@ -39,7 +39,27 @@
                 <p class="text-black"><Strong>Suitable for vegetarians: </Strong><i class="fas fa-check"></i></p>
                 {% else %}
                 <p class="text-black"><Strong>Suitable for vegetarians: </Strong><i class="fas fa-times text-red"></i></p>
-                {% endif %}               
+                {% endif %} 
+                <form class="form p-0" action="{% url 'add_to_cart' product.id %}" method="POST">
+                    {% csrf_token %}
+                    <div class="form-row">
+                        <div class="col-12">
+                            <p class="qty"><strong>Quantity: </strong></p>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input class="form-group qty-input text-black" type="number" name="quantity" value="1" min="1" max="99" data-item_id="{{ product.id }}" id="id-qty_{{ product.id }}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <a href="{% url 'products' %}" class="btn btn-lg btn-secondary">
+                                <span class="text-uppercase text-white">Still Hungry?</span>
+                            </a>
+                            <input type="submit" class="btn btn-lg m-2 btn-secondary" value="Add to Cart">
+                        </div>
+                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                    </div>
+                </form>              
             </div>
         </div>
     </div>
