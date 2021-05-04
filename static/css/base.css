@@ -12,6 +12,7 @@
 
 body {
     background: black;
+    font-size: 1.5rem;
 }
 
 html {
@@ -468,6 +469,12 @@ input[name='q']::placeholder {
 /* Shoping Cart */
 th {
     font-size: 1.5rem;
+}
+
+.btt-link,
+.update-link,
+.remove-item {
+    cursor: pointer;
 }
 
 /* Media Queries */
