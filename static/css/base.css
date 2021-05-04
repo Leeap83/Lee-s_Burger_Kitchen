@@ -464,6 +464,12 @@ input[name='q']::placeholder {
 .supplier-details a {
     color: #000;
 }
+
+/* Shoping Cart */
+th {
+    font-size: 1.5rem;
+}
+
 /* Media Queries */
 @media (max-width: 991px) {
 
