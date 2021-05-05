@@ -48,6 +48,9 @@ INSTALLED_APPS = [
     'customer',
     'cart',
     'checkout',
+
+    # other
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -61,6 +64,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'Lees_Burger_Kitchen.urls'
+
+CRISPY_TEMPLATES_PACK = 'bootsrap4'
 
 TEMPLATES = [
     {
@@ -78,6 +83,10 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'cart.contexts.cart_contents',
             ],
+            'builtins': [
+                'crispy_forms.templatetags.crispy_forms_tag',
+                'crispy_forms.templatetags.crispy_forms_fields',
+            ]
         },
     },
 ]
