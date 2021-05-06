@@ -1,0 +1,378 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<section class="container-fluid bg-white">
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <a href="{% url 'home' %}" class="btn btn-lg m-2 btn-secondary" type="button">Close</a>
+    </div>
+    <div class="col-12 col-md-8 col-lg-6 offset-lg-4">
+        <h2 class="sub-headline text-black ">Place An Order</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-12 col-sm-12 p-4">
+                <div class="pt-5">
+                    <h2><strong>Bites</strong></h2>
+                    {% for item in bites %}
+                    <div class="row">
+                        <div class="col-md-2 col-sm-12">
+                            <img class="rounded" src="{{ item.image.url }}" width="200" height="150"/>
+                        </div>
+                        <div class="col-md-8 col-sm-12">
+                            <div class="d-flex flex-row">
+                                <div>
+                                    <p class="text-black"><strong>{{ item.name }}</strong></p>
+                                </div>
+                                <p class="font-weight-bold text-black pl-5">{{ item.price }}</p>
+                            </div>
+                            <p class="text-black">{{ item.description }}</p>
+                        </div>
+                        <form class="form" action="{% url 'add_to_cart' item.id %}" method="POST">
+                            {% csrf_token %}
+                            <div class="col-12 p-0">
+                                <p><strong>Quantity:</strong></p>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <button class="decrement-qty btn btn-black rounded-0" 
+                                                data-item_id="{{ item.id }}" id="decrement-qty_{{ item.id }}">
+                                                <span class="icon">
+                                                    <i class="fas fa-minus"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                        <input class="form-control qty_input" type="number"
+                                            name="quantity" value="1" min="1" max="99"
+                                            data-item_id="{{ item.id }}"
+                                            id="id_qty_{{ item.id }}">
+                                        <div class="input-group-append">
+                                            <button class="increment-qty btn btn-black rounded-0"
+                                                data-item_id="{{ item.id }}" id="increment-qty_{{ item.id }}">
+                                                <span class="icon">
+                                                    <i class="fas fa-plus"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                <div class="col-12">
+                                    <input type="submit" class="btn btn-lg m-2 btn-secondary" value="Add to Cart">
+                                </div>
+                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                            </div>
+                        </form>              
+                    </div>
+                    <hr>
+                {% endfor %}
+                </div>
+
+                <div class="pt-5">
+                    <h2><strong>Beef Burgers</strong></h2>
+                    {% for item in beef %}
+                    <div class="row">
+                        <div class="col-md-2 col-sm-12">
+                            <img class="rounded" src="{{ item.image.url }}" width="200" height="150"/>
+                        </div>
+                        <div class="col-md-8 col-sm-12">
+                            <div class="d-flex flex-row">
+                                <div>
+                                    <p class="text-black"><strong>{{ item.name }}</strong></p>
+                                </div>
+                                <p class="font-weight-bold text-black pl-5">{{ item.price }}</p>
+                            </div>
+                            <p class="text-black">{{ item.description }}</p>
+                        </div>
+                        <form class="form" action="{% url 'add_to_cart' item.id %}" method="POST">
+                            {% csrf_token %}
+                            <div class="col-12 p-0">
+                                <p><strong>Quantity:</strong></p>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <button class="decrement-qty btn btn-black rounded-0" 
+                                                data-item_id="{{ item.id }}" id="decrement-qty_{{ item.id }}">
+                                                <span class="icon">
+                                                    <i class="fas fa-minus"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                        <input class="form-control qty_input" type="number"
+                                            name="quantity" value="1" min="1" max="99"
+                                            data-item_id="{{ item.id }}"
+                                            id="id_qty_{{ item.id }}">
+                                        <div class="input-group-append">
+                                            <button class="increment-qty btn btn-black rounded-0"
+                                                data-item_id="{{ item.id }}" id="increment-qty_{{ item.id }}">
+                                                <span class="icon">
+                                                    <i class="fas fa-plus"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                <div class="col-12">
+                                    <input type="submit" class="btn btn-lg m-2 btn-secondary" value="Add to Cart">
+                                </div>
+                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                            </div>
+                        </form>              
+                    </div>
+                    <hr>
+                    {% endfor %}
+                </div>
+
+                <div class="pt-5">
+                    <h2><strong>Chicken Burgers</strong></h2>
+                    {% for item in chicken %}
+                    <div class="row">
+                        <div class="col-md-2 col-sm-12">
+                            <img class="rounded" src="{{ item.image.url }}" width="200" height="150"/>
+                        </div>
+                        <div class="col-md-8 col-sm-12">
+                            <div class="d-flex flex-row">
+                                <div>
+                                    <p class="text-black"><strong>{{ item.name }}</strong></p>
+                                </div>
+                                <p class="font-weight-bold text-black pl-5">{{ item.price }}</p>
+                            </div>
+                            <p class="text-black">{{ item.description }}</p>
+                        </div>
+                        <form class="form" action="{% url 'add_to_cart' item.id %}" method="POST">
+                            {% csrf_token %}
+                            <div class="col-12 p-0">
+                                <p><strong>Quantity:</strong></p>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <button class="decrement-qty btn btn-black rounded-0" 
+                                                data-item_id="{{ item.id }}" id="decrement-qty_{{ item.id }}">
+                                                <span class="icon">
+                                                    <i class="fas fa-minus"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                        <input class="form-control qty_input" type="number"
+                                            name="quantity" value="1" min="1" max="99"
+                                            data-item_id="{{ item.id }}"
+                                            id="id_qty_{{ item.id }}">
+                                        <div class="input-group-append">
+                                            <button class="increment-qty btn btn-black rounded-0"
+                                                data-item_id="{{ item.id }}" id="increment-qty_{{ item.id }}">
+                                                <span class="icon">
+                                                    <i class="fas fa-plus"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                <div class="col-12">
+                                    <input type="submit" class="btn btn-lg m-2 btn-secondary" value="Add to Cart">
+                                </div>
+                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                            </div>
+                        </form>              
+                    </div>
+                    <hr>
+                    {% endfor %}
+                </div>
+
+                <div class="pt-5">
+                    <h2><strong>Vegetarian Burgers</strong></h2>
+                    {% for item in vegie %}
+                    <div class="row">
+                        <div class="col-md-2 col-sm-12">
+                            <img class="rounded" src="{{ item.image.url }}" width="200" height="150"/>
+                        </div>
+                        <div class="col-md-8 col-sm-12">
+                            <div class="d-flex flex-row">
+                                <div>
+                                    <p class="text-black"><strong>{{ item.name }}</strong></p>
+                                </div>
+                                <p class="font-weight-bold text-black pl-5">{{ item.price }}</p>
+                            </div>
+                            <p class="text-black">{{ item.description }}</p>
+                        </div>
+                        <form class="form" action="{% url 'add_to_cart' item.id %}" method="POST">
+                            {% csrf_token %}
+                            <div class="col-12 p-0">
+                                <p><strong>Quantity:</strong></p>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <button class="decrement-qty btn btn-black rounded-0" 
+                                                data-item_id="{{ item.id }}" id="decrement-qty_{{ item.id }}">
+                                                <span class="icon">
+                                                    <i class="fas fa-minus"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                        <input class="form-control qty_input" type="number"
+                                            name="quantity" value="1" min="1" max="99"
+                                            data-item_id="{{ item.id }}"
+                                            id="id_qty_{{ item.id }}">
+                                        <div class="input-group-append">
+                                            <button class="increment-qty btn btn-black rounded-0"
+                                                data-item_id="{{ item.id }}" id="increment-qty_{{ item.id }}">
+                                                <span class="icon">
+                                                    <i class="fas fa-plus"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                <div class="col-12">
+                                    <input type="submit" class="btn btn-lg m-2 btn-secondary" value="Add to Cart">
+                                </div>
+                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                            </div>
+                        </form>              
+                    </div>
+                    <hr>
+                    {% endfor %}
+                </div>
+
+                <div class="pt-5">
+                    <h2><strong>Sides & Fries</strong></h2>
+                    {% for item in sides %}
+                    <div class="row">
+                        <div class="col-md-2 col-sm-12">
+                            <img class="rounded" src="{{ item.image.url }}" width="200" height="150"/>
+                        </div>
+                        <div class="col-md-8 col-sm-12">
+                            <div class="d-flex flex-row">
+                                <div>
+                                    <p class="text-black"><strong>{{ item.name }}</strong></p>
+                                </div>
+                                <p class="font-weight-bold text-black pl-5">{{ item.price }}</p>
+                            </div>
+                            <p class="text-black">{{ item.description }}</p>
+                        </div>
+                        <form class="form" action="{% url 'add_to_cart' item.id %}" method="POST">
+                            {% csrf_token %}
+                            <div class="col-12 p-0">
+                                <p><strong>Quantity:</strong></p>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <button class="decrement-qty btn btn-black rounded-0" 
+                                                data-item_id="{{ item.id }}" id="decrement-qty_{{ item.id }}">
+                                                <span class="icon">
+                                                    <i class="fas fa-minus"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                        <input class="form-control qty_input" type="number"
+                                            name="quantity" value="1" min="1" max="99"
+                                            data-item_id="{{ item.id }}"
+                                            id="id_qty_{{ item.id }}">
+                                        <div class="input-group-append">
+                                            <button class="increment-qty btn btn-black rounded-0"
+                                                data-item_id="{{ item.id }}" id="increment-qty_{{ item.id }}">
+                                                <span class="icon">
+                                                    <i class="fas fa-plus"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                <div class="col-12">
+                                    <input type="submit" class="btn btn-lg m-2 btn-secondary" value="Add to Cart">
+                                </div>
+                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                            </div>
+                        </form>              
+                    </div>
+                    <hr>
+                    {% endfor %}
+                </div>
+
+                <div class="pt-5">
+                    <h2><strong>Sauces</strong></h2>
+                    {% for item in sauces %}
+                    <div class="row">
+                        <div class="col-md-2 col-sm-12">
+                            <img class="rounded" src="{{ item.image.url }}" width="200" height="150"/>
+                        </div>
+                        <div class="col-md-8 col-sm-12">
+                            <div class="d-flex flex-row">
+                                <div>
+                                    <p class="text-black"><strong>{{ item.name }}</strong></p>
+                                </div>
+                                <p class="font-weight-bold text-black pl-5">{{ item.price }}</p>
+                            </div>
+                            <p class="text-black">{{ item.description }}</p>
+                        </div>
+                        <form class="form" action="{% url 'add_to_cart' item.id %}" method="POST">
+                            {% csrf_token %}
+                            <div class="col-12 p-0">
+                                <p><strong>Quantity:</strong></p>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <button class="decrement-qty btn btn-black rounded-0" 
+                                                data-item_id="{{ item.id }}" id="decrement-qty_{{ item.id }}">
+                                                <span class="icon">
+                                                    <i class="fas fa-minus"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                        <input class="form-control qty_input" type="number"
+                                            name="quantity" value="1" min="1" max="99"
+                                            data-item_id="{{ item.id }}"
+                                            id="id_qty_{{ item.id }}">
+                                        <div class="input-group-append">
+                                            <button class="increment-qty btn btn-black rounded-0"
+                                                data-item_id="{{ item.id }}" id="increment-qty_{{ item.id }}">
+                                                <span class="icon">
+                                                    <i class="fas fa-plus"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                <div class="col-12">
+                                    <input type="submit" class="btn btn-lg m-2 btn-secondary" value="Add to Cart">
+                                </div>
+                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                            </div>
+                        </form>              
+                    </div>
+                    <hr>
+                    {% endfor %}
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="btt-button rounded-0 d-grid gap-2 d-md-flex justify-content-md-end">
+        <a class="btt-link">
+            <i class="fas fa-arrow-up fa-lg text-black m-3"></i>
+        </a>
+    </div>
+</section>
+
+
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+{% include 'products/includes/qty_input_script.html' %}
+<script type="text/javascript">
+    $('.btt-link').click(function(e) {
+        window.scrollTo(0,0)
+    })
+</script>
+{% endblock %}

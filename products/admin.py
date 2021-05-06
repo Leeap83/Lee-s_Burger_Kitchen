@@ -25,6 +25,8 @@ class CategoryAdmin(admin.ModelAdmin):
 class IngredientsAdmin(admin.ModelAdmin):
     list_display = (
         'name',
+        'cyo',
+        'cat',
     )
 
 
