@@ -81,21 +81,39 @@
     <div class="container food-items">
         <div class="row">
             {% for product in products %}
-            <div class="card">
-                <div class="imgbx">
-                    {% if product.image %}
-                    <img src="{{ product.image_url }}" class="card-img-top" alt="{{ product.name }}">
-                    {% else %}
-                    <img src="{{ MEDIA_URL }}noimage.png" class="card-img-top" alt="{{ product.name }}">
-                    {% endif %}
+                {% if product.custom == True %}
+                <div class="card">
+                    <div class="imgbx">
+                        {% if product.image %}
+                        <img src="{{ product.image_url }}" class="card-img-top" alt="{{ product.name }}">
+                        {% else %}
+                        <img src="{{ MEDIA_URL }}noimage.png" class="card-img-top" alt="{{ product.name }}">
+                        {% endif %}
+                    </div>
+                    <div class="content">
+                        <h2 class="card-title text-white">{{ product.name }}</h2>
+                        <p class="card-text text-white">{{ product.description }}.</p>
+                        <p class="card-text text-white font-weight-bold">£{{ product.price }}</p>
+                        <a href="{% url 'custom_details' product.id %}" class="btn btn-lg btn-secondary m-2">More Info</a>
+                    </div>
                 </div>
-                <div class="content">
-                    <h2 class="card-title text-white">{{ product.name }}</h2>
-                    <p class="card-text text-white">{{ product.description }}.</p>
-                    <p class="card-text text-white font-weight-bold">£{{ product.price }}</p>
-                    <a href="{% url 'product_details' product.id %}" class="btn btn-lg btn-secondary m-2">More Info</a>
+                {% else %}
+                <div class="card">
+                    <div class="imgbx">
+                        {% if product.image %}
+                        <img src="{{ product.image_url }}" class="card-img-top" alt="{{ product.name }}">
+                        {% else %}
+                        <img src="{{ MEDIA_URL }}noimage.png" class="card-img-top" alt="{{ product.name }}">
+                        {% endif %}
+                    </div>
+                    <div class="content">
+                        <h2 class="card-title text-white">{{ product.name }}</h2>
+                        <p class="card-text text-white">{{ product.description }}.</p>
+                        <p class="card-text text-white font-weight-bold">£{{ product.price }}</p>
+                        <a href="{% url 'product_details' product.id %}" class="btn btn-lg btn-secondary m-2">More Info</a>
+                    </div>
                 </div>
-            </div>
+                {% endif %}
             {% endfor %}
         </div>
     </div>

@@ -27,6 +27,7 @@ class Product(models.Model):
     vegetarian = models.BooleanField()
     ingredients = models.ManyToManyField(
         'Ingredients', related_name='ingredients', blank=True)
+    custom = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name
