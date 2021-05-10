@@ -3,6 +3,8 @@ from django.contrib import messages
 from django.db.models import Q
 from .models import Product, Category, Ingredients
 
+from .forms import CustomForm
+
 # Create your views here.
 
 
@@ -59,10 +61,12 @@ def custom_details(request, product_id):
     custom = Product.objects.filter(
         category__name__contains='custom_burgers')
 
+    custom_form = CustomForm()
     context = {
         'product': product,
         'ingredient': ingredient,
         'custom': custom,
+        'custom_form': custom_form,
     }
 
     return render(request, 'products/custom_details.html', context)
