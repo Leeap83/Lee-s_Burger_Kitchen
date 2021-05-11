@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %}
+
+{% block page_header %}
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid mb-2 bg-white">
+    <div class="row">
+        <div class="col-12 col-md-8 col-lg-8 offset-lg-2">
+            <h2 class="text-black text-center sub-headlines">Nice One!</h2>
+            <p class="text-black">Thank you for your order, your order details are below. 
+                We have sent a confirmation email will be sent to <strong>{{ order.email }}</strong>.
+            </p>
+        </div>
+    </div>
+    <div class="row bg-">
+        <div class="col-12 col-lg-7 text-right"></div>
+        
+    </div>
+</div>
+{% endblock %}
