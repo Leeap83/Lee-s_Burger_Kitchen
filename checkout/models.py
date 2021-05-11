@@ -34,6 +34,8 @@ class Order(models.Model):
         max_digits=10, decimal_places=2, null=False, default=0)
     order_status = models.CharField(
         max_length=100, choices=CHOICES, default='Order Recieved')
+    original_cart = models.TextField(null=False, blank=False, default='')
+    stripe_pid = models.CharField(max_length=254, null=False, blank=False, default='')
 
     def _generate_order_id(self):
         """ Generates a random, unique order id using uuid """
