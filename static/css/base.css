@@ -576,6 +576,15 @@ th {
     padding: 20px;
 }
 
+/* Allauth form formatting */
+
+.allauth-form-inner-content a {
+    color: #17a2b8;
+}
+
+.allauth-form-inner-content label:not([for='id_remember']) {
+    display: none;
+}
 
 /* Media Queries */
 @media (max-width: 991px) {
