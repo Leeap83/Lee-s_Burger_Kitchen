@@ -10,13 +10,32 @@
 
 {% block content %}
 <div class="container-fluid mb-2 bg-white">
-    <div class="col-12 col-md-6 col-lg-8 offset-md-4">
+    <div class="col-12 col-md-6 col-lg-8 offset-lg-8">
         <div class="media">
             <img class="rounded-circle profile-img" src="{{ user.userprofile.image.url }}" alt="">
             <div class="media-body">
                 <h2 class="profile-heading pt-5">{{ user.username }}'s Profile</h2>
                 <p class="profile-email">{{ user.email }}</p>
+                <a class="btn btn-secondary" href="{% url 'update_profile' %}">Update Profile</a>
             </div>
+        </div>
+    </div>
+    <hr>
+    <div class="row p-2">
+        <div class="col-12 col-lg-6">
+            <h2><strong>Delivery Info</strong></h2>
+            <p><strong>Phone:</strong> </p>
+            <p>{{ profile.default_phone_number }}</p>
+            <p><strong> Address:</strong></p>
+            <p>Street: {{ profile.default_street }}</p>
+            <p>Town or City: {{ profile.default_town_or_city }}</p>
+            <p>County: {{ profile.default_county }}</p>
+            <p>Postcode: {{ profile.default_postcode }}</p>
+
+        </div>
+        <div class="col-12 col-lg-6">
+            <h2>Order History</h2>
+            {{orders}}
         </div>
     </div>
     

@@ -586,6 +586,15 @@ th {
     display: none;
 }
 
+#profile-update-form a,
+#profile-update-form .form-control {
+    color: #000;
+}
+
+#profile-update-form input::placeholder {
+    color: #aab7c4;
+}
+
 /* Media Queries */
 @media (max-width: 991px) {
 
