@@ -1,0 +1,22 @@
+Hi {{order.name}},
+
+Your order is confirmed!
+
+Thank you for your online order placed on {{order.created_on}}.
+
+Order Id: {{ order.order_id }}
+
+Subtotal: {{ order.order_total }}
+Delivery: {{ ordr.delivery_cost }}
+Total: {{ order.grand_total }}
+
+We will deliver your order to:
+{{ order.name }}
+{{ order.street }}
+{{ order.town_or_city }}
+{{ order.postcode }}
+
+We will give you a call on {{ order.phone_number }} if there are any problems.
+If you have any questions, feel free to contact us at {{ contact_email}} and we'll be happy to help.
+
+Thank you from everyone at LBK

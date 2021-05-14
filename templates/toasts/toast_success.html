@@ -3,7 +3,7 @@
     <div class="w-100 toast-capper bg-success"></div>
     <div class="toast-header bg-dark">
         <strong class="mr-auto text-white">Success!</strong>
-        <button type="button" class="close text-dark" data-dismiss="toast" aria-label="Close">
+        <button type="button" class="close text-white" data-dismiss="toast" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
     </div>
@@ -14,7 +14,7 @@
             <hr>
             </div>
         </div>
-        {% if grand_total %}
+        {% if grand_total and not on_profile_page %}
         <p class="bg-white text-black">Your Cart {{ product_count }}</p>
         <div class="cart-notification-wrapper">
             {% for item in cart_items %}
