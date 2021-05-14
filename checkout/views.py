@@ -2,6 +2,7 @@ from django.shortcuts import (render, redirect, reverse, get_object_or_404, Http
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
+from django.utils.timezone import datetime
 
 from .forms import OrderForm
 from .models import Order, OrderLineItem
@@ -157,6 +158,39 @@ def checkout_success(request, order_id):
         del request.session['cart']
 
     template = 'checkout/checkout_success.html'
+    context = {
+        'order': order,
+    }
+
+    return render(request, template, context)
+
+
+def dashboard(request):
+    """ A view to return todays orders"""
+    today = datetime.today()
+    orders = Order.objects.filter(
+        created_on__year=today.year,
+        created_on__month=today.month,
+        created_on__day=today.day
+    )
+
+    total_revenue = 0
+    for order in orders:
+        total_revenue += order.order_total
+
+    context = {
+        'orders': orders,
+        'total_revenue': total_revenue,
+        'total_orders': len(orders)
+    }
+
+    return render(request, 'checkout/dashboard.html', context)
+
+
+def view_order(request, order_id):
+    order = get_object_or_404(Order, order_id=order_id)
+
+    template = 'checkout/view_order.html'
     context = {
         'order': order,
     }

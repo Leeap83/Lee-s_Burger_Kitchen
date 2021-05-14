@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from products.models import Product, Ingredients
+from products.models import Product
 
 
 def about_us(request):

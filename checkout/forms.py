@@ -7,7 +7,7 @@ class OrderForm(forms.ModelForm):
         model = Order
         fields = ('name', 'email', 'phone_number',
                   'street', 'town_or_city', 'postcode',
-                  'county',)
+                  'county')
 
     def __init__(self, *args, **kwargs):
         """
