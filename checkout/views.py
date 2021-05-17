@@ -188,10 +188,27 @@ def dashboard(request):
 
 
 def view_order(request, order_id):
-    order = get_object_or_404(Order, order_id=order_id)
-
+    """View Order details and update status"""
+    order = Order.objects.get(order_id=order_id)
     template = 'checkout/view_order.html'
     context = {
+        'order': order,
+
+    }
+
+    return render(request, template, context)
+
+
+def edit_status(request, order_id):
+    """Edit a product from the Menu"""
+    order = get_object_or_404(Order, id=order_id)
+    form = OrderForm(instance=order)
+    fields = ('order_status',)
+    messages.info(request, f'You are editing {order.order_status}')
+
+    template = 'products/edit_product.html'
+    context = {
+        'form': form,
         'order': order,
     }
 

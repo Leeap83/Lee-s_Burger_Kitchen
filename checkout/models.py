@@ -9,15 +9,13 @@ from profiles.models import UserProfile
 
 # Create your models here.
 
-CHOICES = (
-    ('Order Recieved', 'Order Recieved'),
-    ('Cooking', 'Cooking'),
-    ('Out for delivery', 'Out for Delivery'),
-    ('Order Delivered', 'Order Delivered'),
-)
-
-
 class Order(models.Model):
+    CHOICES = (
+        ('Order Recieved', 'Order Recieved'),
+        ('Cooking', 'Cooking'),
+        ('Out for delivery', 'Out for Delivery'),
+        ('Order Delivered', 'Order Delivered'),
+    )
     created_on = models.DateTimeField(auto_now_add=True)
     order_id = models.CharField(max_length=28, null=False, editable=False)
     user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,

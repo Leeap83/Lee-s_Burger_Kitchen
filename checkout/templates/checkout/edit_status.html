@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid bg-white">
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <a href="{% url 'view_order' %}" class="btn btn-lg m-2 btn-secondary" type="button">Close</a>
+    </div>
+    <div class="col-12">
+        <h2 class="sub-headline text-center text-black ">Edit Status</h2>
+    </div>
+    <div class="row">
+        <div class="col-12 col-md-6 col-lg-6 offset-lg-3">
+            <form action="{% url 'edit_status' order.id %}" method="POST" class="form mb-2">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <div>
+                    <button class="btn btn-secondary btn-lg" type="submit">Update</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

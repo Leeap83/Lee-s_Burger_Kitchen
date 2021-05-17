@@ -51,13 +51,9 @@
                             <p class="text-muted mb-0">Order Status:</p>
                         </div>
                         <div class="col-12 col-md-4">
-                            <select class="status" name="status">
-                                <option value="received">Received</option>
-                                <option value="cooking">Cooking</option>
-                                <option value="outfor delivery">Out for delivery</option>
-                                <option value="Order Delivered">Delivered</option>
-                            </select>
-                            <button type="button" class="btn btn-secondary update-btn">Update</button>
+                            <p class="text-muted">{{ order.order_status }} &nbsp;
+                                <a href="{% url 'edit_status' order.id %}" class="text-info small">Update Status</a>
+                            </p>
                         </div>
                     </div>
                     <div class="row">
