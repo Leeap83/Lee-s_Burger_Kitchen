@@ -115,6 +115,12 @@
                         <p class="card-text text-white">{{ product.description }}.</p>
                         <p class="card-text text-white font-weight-bold">£{{ product.price }}</p>
                         <a href="{% url 'product_details' product.id %}" class="btn btn-lg btn-secondary m-2">More Info</a>
+                        {% if request.user.is_superuser %}
+                        <div>
+                            <a href="{% url 'edit_product' product.id %}" class="btn btn-lg btn-success m-2">Edit</a>
+                            <a href="{% url 'delete_product' product.id %}" class="btn btn-lg btn-danger m-2">Delete</a>
+                        </div>
+                        {% endif %}
                     </div>
                 </div>
                 {% endif %}

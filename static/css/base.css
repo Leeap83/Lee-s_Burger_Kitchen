@@ -376,7 +376,7 @@ input[name='q']::placeholder {
 }
 
 .food-items .card:hover {
-    height: 420px;
+    height: 500px;
 }
 
 .food-items .card .imgbx {

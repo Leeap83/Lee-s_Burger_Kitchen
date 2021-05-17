@@ -29,6 +29,12 @@
         <div class="col-12 col-md6 col-lg-4 offset-lg-4">
             <div class="product-details-container text-black">
                 <p class="text-black"><strong>Name: </strong>{{ product.name }}</p>
+                {% if request.user.is_superuser %}
+                    <div>
+                        <a href="{% url 'edit_product' product.id %}" class="btn btn-lg btn-success m-2">Edit</a>
+                        <a href="{% url 'delete_product' product.id %}" class="btn btn-lg btn-danger m-2">Delete</a>
+                    </div>
+                {% endif %}
                 <p class="loud text-black"><strong>Price: </strong>£{{ product.price }}</p>
                 <p class="text-muted text-black"><strong>Category: </strong>{{ product.category.friendly_name  }}</small>
                 <h4><strong>Description: </strong></h4>
