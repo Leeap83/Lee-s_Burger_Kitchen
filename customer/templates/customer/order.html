@@ -24,7 +24,11 @@
                     {% for item in bites %}
                     <div class="row">
                         <div class="col-md-2 col-sm-12">
-                            <img class="rounded" src="{{ item.image.url }}" width="200" height="150"/>
+                            {% if item.image %}
+                                <img class="rounded" src="{{ item.image.url }}" width="200" height="150" alt="{{ item.name }}"/>
+                            {% else %}
+                                <img class="rounded" src="{{ MEDIA_URL }}noimage.png" width="200" height="150" alt="{{ item.name }}">
+                            {% endif %}
                         </div>
                         <div class="col-md-8 col-sm-12">
                             <div class="d-flex flex-row">
@@ -80,7 +84,11 @@
                     {% for item in beef %}
                     <div class="row">
                         <div class="col-md-2 col-sm-12">
-                            <img class="rounded" src="{{ item.image.url }}" width="200" height="150"/>
+                            {% if item.image %}
+                                <img class="rounded" src="{{ item.image.url }}" width="200" height="150" alt="{{ item.name }}"/>
+                            {% else %}
+                                <img class="rounded" src="{{ MEDIA_URL }}noimage.png" width="200" height="150" alt="{{ item.name }}">
+                            {% endif %}
                         </div>
                         <div class="col-md-8 col-sm-12">
                             <div class="d-flex flex-row">
@@ -136,7 +144,11 @@
                     {% for item in chicken %}
                     <div class="row">
                         <div class="col-md-2 col-sm-12">
-                            <img class="rounded" src="{{ item.image.url }}" width="200" height="150"/>
+                            {% if item.image %}
+                                <img class="rounded" src="{{ item.image.url }}" width="200" height="150" alt="{{ item.name }}"/>
+                            {% else %}
+                                <img class="rounded" src="{{ MEDIA_URL }}noimage.png" width="200" height="150" alt="{{ item.name }}">
+                            {% endif %}
                         </div>
                         <div class="col-md-8 col-sm-12">
                             <div class="d-flex flex-row">
@@ -192,7 +204,11 @@
                     {% for item in vegie %}
                     <div class="row">
                         <div class="col-md-2 col-sm-12">
-                            <img class="rounded" src="{{ item.image.url }}" width="200" height="150"/>
+                            {% if item.image %}
+                                <img class="rounded" src="{{ item.image.url }}" width="200" height="150" alt="{{ item.name }}">
+                            {% else %}
+                                <img class="rounded" src="{{ MEDIA_URL }}noimage.png" width="200" height="150" alt="{{ item.name }}">
+                            {% endif %}
                         </div>
                         <div class="col-md-8 col-sm-12">
                             <div class="d-flex flex-row">
@@ -248,7 +264,11 @@
                     {% for item in sides %}
                     <div class="row">
                         <div class="col-md-2 col-sm-12">
-                            <img class="rounded" src="{{ item.image.url }}" width="200" height="150"/>
+                            {% if item.image %}
+                                <img class="rounded" src="{{ item.image.url }}" width="200" height="150" alt="{{ item.name }}"/>
+                            {% else %}
+                                <img class="rounded" src="{{ MEDIA_URL }}noimage.png" width="200" height="150" alt="{{ item.name }}">
+                            {% endif %}
                         </div>
                         <div class="col-md-8 col-sm-12">
                             <div class="d-flex flex-row">
@@ -304,7 +324,11 @@
                     {% for item in sauces %}
                     <div class="row">
                         <div class="col-md-2 col-sm-12">
-                            <img class="rounded" src="{{ item.image.url }}" width="200" height="150"/>
+                            {% if item.image %}
+                                <img class="rounded" src="{{ item.image.url }}" width="200" height="150" alt="{{ item.name }}"/>
+                            {% else %}
+                                <img class="rounded" src="{{ MEDIA_URL }}noimage.png" width="200" height="150" alt="{{ item.name }}">
+                            {% endif %}
                         </div>
                         <div class="col-md-8 col-sm-12">
                             <div class="d-flex flex-row">

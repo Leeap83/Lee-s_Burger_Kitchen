@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.db.models import Q
 from .models import Product, Category, Ingredients
 
-from .forms import CustomForm
+from .forms import CustomForm, ProductForm
 
 # Create your views here.
 
@@ -61,12 +61,33 @@ def custom_details(request, product_id):
     custom = Product.objects.filter(
         category__name__contains='custom_burgers')
 
-    custom_form = CustomForm()
+    form = CustomForm()
     context = {
         'product': product,
         'ingredient': ingredient,
         'custom': custom,
-        'custom_form': custom_form,
+        'form': form,
     }
 
     return render(request, 'products/custom_details.html', context)
+
+
+def add_product(request):
+    """Add a product to the database"""
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully added product!')
+            return redirect(reverse('add_product'))
+        else:
+            messages.error(request, 'Failed to add product.')
+    else:
+        form = ProductForm()
+
+    template = 'products/add_product.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)

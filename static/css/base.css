@@ -63,7 +63,10 @@ strong {
 .main-logo-link {
     width: fit-content;
 }
-
+/*---------------Dropdown Menu*/
+.dropdown-menu {
+    font-size: 1.3rem;
+}
 /* from Bulma */
 .icon {
     align-items: center;
