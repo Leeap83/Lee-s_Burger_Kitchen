@@ -53,7 +53,7 @@
                         {% if order.order_status != 'Order Delivered'%}
                         <tr>
                             <th scope="row">
-                                <a href="{% url 'view_order' order.order_id %}" class="text-black">{{order.order_id}}</a>
+                                <a href="{% url 'view_order' order.pk %}" class="text-black">{{order.pk}}</a>
                             </th>
                             <td>{{order.order_total}}</td>
                             <td>{{order.created_on.time}}</td>
@@ -90,7 +90,7 @@
                         {% if order.order_status == 'Order Delivered'%}
                         <tr>
                             <th scope="row">
-                                <a href="" class="text-black">{{order.order_id}}</a>
+                                <a href="{% url 'view_order' order.pk %}" class="text-black">{{order.pk}}</a>
                             </th>
                             <td>{{order.order_total}}</td>
                             <td>{{order.created_on.time}}</td>
