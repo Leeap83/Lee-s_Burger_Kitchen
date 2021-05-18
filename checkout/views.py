@@ -165,6 +165,7 @@ def checkout_success(request, order_id):
 
     return render(request, template, context)
 
+
 @login_required
 def dashboard(request):
     """ A view to return todays orders"""
@@ -190,6 +191,7 @@ def dashboard(request):
     }
 
     return render(request, 'checkout/dashboard.html', context)
+
 
 @login_required
 def view_order(request, pk):

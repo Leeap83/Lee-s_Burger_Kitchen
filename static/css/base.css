@@ -468,6 +468,17 @@ input[name='q']::placeholder {
     color: #000;
 }
 
+/* Reviews */
+.review-hero {
+    width: 100%;
+    height: 300px;
+    background: url('/media/review.jpg') center no-repeat rgba(0, 0, 0, .2);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
 /* Shoping Cart */
 th {
     font-size: 1.5rem;

@@ -1,5 +1,9 @@
 from django.shortcuts import render
+from django.contrib import messages
 from products.models import Product
+from customer.models import Review
+
+from customer.forms import RatingForm
 
 
 def about_us(request):
@@ -42,3 +46,39 @@ def place_order(request):
     }
 
     return render(request, 'customer/order.html', context)
+
+
+def reviews(request):
+    """ A view to display all reviews """
+    reviews = Review.objects.all()
+
+    context = {
+        'reviews': reviews,
+    }
+
+    return render(request, 'customer/reviews.html', context)
+
+
+def add_review(request):
+    user = request.user
+
+    if request.method == 'POST':
+        form = RatingForm(request.POST)
+        if form.is_valid():
+            review = form.save(commit=False)
+            review.user = user
+            review.save()
+            messages.success(request, 'Review Added successfully')
+        else:
+            messages.error(request, 'Failed to add review.')
+    else:
+        form = RatingForm()
+
+    template = 'customer/add_review.html'
+
+    context = {
+        'form': form,
+        'user': user,
+    }
+
+    return render(request, template, context)
