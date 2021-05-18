@@ -1,6 +1,7 @@
 from django.shortcuts import (render, redirect, reverse, get_object_or_404, HttpResponse)
 from django.views.decorators.http import require_POST
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.conf import settings
 from django.utils.timezone import datetime
 
@@ -164,9 +165,13 @@ def checkout_success(request, order_id):
 
     return render(request, template, context)
 
-
+@login_required
 def dashboard(request):
     """ A view to return todays orders"""
+    if not request.user.is_superuser:
+        messages.error(request, 'Access Denied')
+        return redirect(reverse('home'))
+
     today = datetime.today()
     orders = Order.objects.filter(
         created_on__year=today.year,
@@ -186,10 +191,15 @@ def dashboard(request):
 
     return render(request, 'checkout/dashboard.html', context)
 
-
+@login_required
 def view_order(request, pk):
     """View Order details and update status"""
+    if not request.user.is_superuser:
+        messages.error(request, 'Access Denied')
+        return redirect(reverse('home'))
+
     order = Order.objects.get(id=pk)
+    product = Product.objects.all()
     form = StatusForm(instance=order)
     if request.method == 'POST':
         form = StatusForm(request.POST, instance=order)
@@ -201,6 +211,7 @@ def view_order(request, pk):
     context = {
         'order': order,
         'form': form,
+        'product': product,
 
     }
 

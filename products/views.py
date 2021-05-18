@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required 
 from django.db.models import Q
 from .models import Product, Category, Ingredients
 
@@ -54,26 +55,33 @@ def product_details(request, product_id):
 
 
 def custom_details(request, product_id):
-    """ A view to show individual product details """
+    """ A view to add custom burger product details """
 
     product = get_object_or_404(Product, pk=product_id)
     ingredient = Ingredients.objects.all()
-    custom = Product.objects.filter(
-        category__name__contains='custom_burgers')
-
     form = CustomForm()
+    if request.method == 'POST':
+        form = CustomForm(request.POST, instance=product)
+        if form.is_valid():
+            custom_burger = form.save()
+            return redirect('cart')
+
     context = {
         'product': product,
         'ingredient': ingredient,
-        'custom': custom,
         'form': form,
     }
 
     return render(request, 'products/custom_details.html', context)
 
 
+@login_required
 def add_product(request):
     """Add a product to the database"""
+    if not request.user.is_superuser:
+        messages.error(request, 'Access Denied')
+        return redirect(reverse('home'))
+
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
@@ -93,8 +101,13 @@ def add_product(request):
     return render(request, template, context)
 
 
+@login_required
 def edit_product(request, product_id):
     """Edit a product from the Menu"""
+    if not request.user.is_superuser:
+        messages.error(request, 'Access Denied')
+        return redirect(reverse('home'))
+
     product = get_object_or_404(Product, pk=product_id)
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES, instance=product)
@@ -116,8 +129,13 @@ def edit_product(request, product_id):
     return render(request, template, context)
 
 
+@login_required
 def delete_product(request, product_id):
     """Delete a product from the Menu"""
+    if not request.user.is_superuser:
+        messages.error(request, 'Access Denied')
+        return redirect(reverse('home'))
+        
     product = get_object_or_404(Product, pk=product_id)
     product.delete()
     messages.success(request, 'Product Deleted!')

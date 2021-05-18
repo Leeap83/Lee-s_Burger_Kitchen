@@ -1,5 +1,6 @@
 from django import forms
-from .models import Product, Ingredients, Category
+from .widgets import CustomClearableFileInput
+from .models import Product, Ingredients, Category, Custom_burger
 
 ingredients = forms.ModelChoiceField(
     queryset=Ingredients.objects,
@@ -8,7 +9,7 @@ ingredients = forms.ModelChoiceField(
 
 class CustomForm(forms.ModelForm):
     class Meta:
-        model = Product
+        model = Custom_burger
         fields = ('ingredients', 'custom_name')
 
     def __init__(self, *args, **kwargs):
@@ -21,6 +22,8 @@ class ProductForm(forms.ModelForm):
     class Meta:
         model = Product
         fields = '__all__'
+
+    image = forms.ImageField(label='Image', required=False, widget=CustomClearableFileInput)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
