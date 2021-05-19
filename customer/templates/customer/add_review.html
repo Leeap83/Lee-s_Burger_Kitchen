@@ -5,30 +5,30 @@
 <section class="review-hero" id="hero">
     <div class="container"></div>
 </section>
-<div class="container-fluid bg-white">
-    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <a href="{% url 'home' %}" class="btn btn-lg m-2 btn-secondary" type="button">Close</a>
-    </div>
-</div>
 <section class="reviews bg-white">
-    <div class="container">
-        <div class="col-12 col-md-8 col-lg-6 offset-lg-3">
-            <div class="section-info">
-                <div class="section-description">
-                    <div class="about-headline">
-                        <h2 class="sub-headline text-black">Reviews</h2>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-md-8 col-lg-8 offset-lg-2">
+                <div class="section-info">
+                    <div class="section-description">
+                        <div class="about-headline">
+                            <h2 class="sub-headline text-black">Customer Reviews</h2>
+                        </div>
                     </div>
                 </div>
-            </div>        
+            </div>
+            <div class="col-12 col-md-2 col-lg-2 justify-content-md-end">
+                <a href="{% url 'reviews' %}" class="btn btn-lg m-2 btn-secondary" type="button">Close</a>
+            </div>
         </div>
         <div class="row">
         <div class="col-12 col-md-6 col-lg-6 offset-lg-3">
             <p>Username: {{ user.username }}</p>
-            <form action="" method="POST" class="form mb-2">
+                <form action="" method="POST" class="form mb-2">
                 {% csrf_token %}
-                {{form|crispy}}
+                {{ form|crispy }}
                 <div>
-                    <button class="btn btn-secondary btn-lg" type="submit">Add Product</button>
+                    <button class="btn btn-secondary btn-lg" type="submit">Add Review</button>
                 </div>
             </form>
         </div>

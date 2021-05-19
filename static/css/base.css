@@ -479,6 +479,17 @@ input[name='q']::placeholder {
     text-align: center;
 }
 
+.form-text {
+    width: 100%;
+}
+.form-check {
+    display: inline;
+    padding: 10px;
+}
+
+.list-group-flush .list-group-item {
+    border-color: white;
+}
 /* Shoping Cart */
 th {
     font-size: 1.5rem;

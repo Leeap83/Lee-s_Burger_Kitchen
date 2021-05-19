@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from django.contrib import messages
+from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
 from products.models import Product
 from customer.models import Review
 
@@ -59,20 +59,18 @@ def reviews(request):
     return render(request, 'customer/reviews.html', context)
 
 
+@login_required
 def add_review(request):
     user = request.user
+    form = RatingForm()
 
     if request.method == 'POST':
         form = RatingForm(request.POST)
         if form.is_valid():
-            review = form.save(commit=False)
-            review.user = user
-            review.save()
-            messages.success(request, 'Review Added successfully')
-        else:
-            messages.error(request, 'Failed to add review.')
-    else:
-        form = RatingForm()
+            rate = form.save(commit=False)
+            rate.user = user
+            rate.save()
+            return redirect('reviews')
 
     template = 'customer/add_review.html'
 
