@@ -1,1 +1,1 @@
-web: gunicorn Lees_Burger_Kitchen.wsgi.application
+web: gunicorn lees-burger-kitchen.wsgi.application
