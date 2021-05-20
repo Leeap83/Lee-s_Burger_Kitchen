@@ -63,7 +63,9 @@ def custom_details(request, product_id):
     if request.method == 'POST':
         form = CustomForm(request.POST, instance=product)
         if form.is_valid():
-            form.save()
+            custom_name = form.save(commit=False)
+            ingredient.custom_name = ingredient
+            custom_name.save()
             return redirect('cart')
 
     context = {

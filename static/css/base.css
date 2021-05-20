@@ -487,6 +487,10 @@ input[name='q']::placeholder {
     padding: 10px;
 }
 
+.form-check-input{
+    margin-top: .6rem;
+}
+
 .list-group-flush .list-group-item {
     border-color: white;
 }

@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from products.models import Product
 from customer.models import Review
 
@@ -61,6 +62,7 @@ def reviews(request):
 
 @login_required
 def add_review(request):
+    """ A view to add a review """
     user = request.user
     form = RatingForm()
 
@@ -70,6 +72,7 @@ def add_review(request):
             rate = form.save(commit=False)
             rate.user = user
             rate.save()
+            messages.success(request, 'Successfully added a review!')
             return redirect('reviews')
 
     template = 'customer/add_review.html'

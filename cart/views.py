@@ -3,14 +3,20 @@ from django.shortcuts import (
 from django.contrib import messages
 
 from products.models import Product
+from products.forms import CustomForm
 
 # Create your views here.
 
 
 def view_cart(request):
     """ A view that renders the cart contents page """
+    form = CustomForm()
 
-    return render(request, 'cart/cart.html')
+    context = {
+        'form': form,
+    }
+
+    return render(request, 'cart/cart.html', context)
 
 
 def add_to_cart(request, item_id):

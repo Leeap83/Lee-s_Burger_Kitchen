@@ -2,20 +2,6 @@ from django import forms
 from .widgets import CustomClearableFileInput
 from .models import Product, Ingredients, Category, Custom_burger
 
-ingredients = forms.ModelChoiceField(
-    queryset=Ingredients.objects,
-    empty_label=None, widget=forms.CheckboxSelectMultiple)
-
-
-class CustomForm(forms.ModelForm):
-    class Meta:
-        model = Custom_burger
-        fields = ('ingredients', 'custom_name')
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.fields['ingredients'].widget.attrs['autofocus'] = True
-
 
 class ProductForm(forms.ModelForm):
 
@@ -33,3 +19,18 @@ class ProductForm(forms.ModelForm):
         self.fields['category'].choices = friendly_names
         for field_name, field in self.fields.items():
             field.widget.attrs['class'] = 'border rounded-0'
+
+
+class CustomForm(forms.ModelForm):
+    custom_name = forms.CharField(
+        widget=forms.TextInput(attrs={'class': 'form-text'}), required=False)
+    ingredients = forms.ModelChoiceField(
+        queryset=Ingredients.objects, empty_label=None,
+        widget=forms.CheckboxSelectMultiple)
+
+    class Meta:
+        model = Custom_burger
+        fields = (
+            'custom_name',
+            'ingredients',
+        )
