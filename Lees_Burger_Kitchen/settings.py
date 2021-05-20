@@ -65,7 +65,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'lees_burger_kitchen.urls'
+ROOT_URLCONF = 'Lees_Burger_Kitchen.urls'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
@@ -116,7 +116,7 @@ ACCOUNT_USERNAME_MIN_LENGTH = 4
 LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/'
 
-WSGI_APPLICATION = 'lees_burger_kitchen.wsgi.application'
+WSGI_APPLICATION = 'Lees_Burger_Kitchen.wsgi.application'
 
 
 # Database
