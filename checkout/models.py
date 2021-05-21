@@ -18,7 +18,7 @@ class Order(models.Model):
         ('Order Delivered', 'Order Delivered'),
     ]
     created_on = models.DateTimeField(auto_now_add=True)
-    order_id = models.CharField(max_length=28, null=False, editable=False)
+    order_id = models.CharField(max_length=32, null=False, editable=False)
     user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
                                      null=True, blank=True,
                                      related_name='orders')

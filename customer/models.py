@@ -14,8 +14,8 @@ RATING_CHOICES = [
 class Review(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     date = models.DateTimeField(auto_now_add=True)
-    title = models.TextField(max_length=500, blank=True)
-    comment = models.TextField(max_length=2500, blank=True)
+    title = models.TextField(max_length=500, blank=True, null=True)
+    comment = models.TextField(max_length=2500, blank=True, null=True)
     rate = models.PositiveSmallIntegerField(choices=RATING_CHOICES)
 
     def __str__(self):
