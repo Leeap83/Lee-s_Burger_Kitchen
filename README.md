@@ -114,7 +114,8 @@ The [LBK](docs/LBK.pdf) wireframes can be found here.
 
 ## Future Development
 * Order Delivery tracker 
-*   
+* Apple & Google Pay 
+
  
 ## Database Structure
 
