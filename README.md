@@ -237,7 +237,9 @@ The website was tested on laptop, desktop, iphone, ipad on the following browser
 
     
 ## Bugs
-- 
+- After deploying to Heroku Menu image links were broken as the file wasn't included in the media folder upload. These were added in the admin section.
+
+- Also after deploying an Server Error 500 appeared after confirming payment in the checkout app. Debug was turned back on to True to discover where the issue was ![error](static/images/error.png). This error was due to the order_id in the models.py having a max-length of 28 when the UUID is 32 characters. This issue was corrected and migrations where ran but the error still occured. After contacting Tutor support it was highlighted that there were existing orders in the database that was causing this error. These orders were deleted from the admin section, the postgress database was reset and the data was dumped into jason.db and reimported.
 
 # Deployment 
 

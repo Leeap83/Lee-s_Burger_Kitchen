@@ -22,6 +22,7 @@ html {
 
 section {
     padding: 3.9rem 0;
+    overflow: hidden;
 }
 
 img {
