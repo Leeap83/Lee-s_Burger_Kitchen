@@ -352,6 +352,7 @@ input[name='q']::placeholder {
     justify-content: center;
     align-items: center;
     background: white;
+    padding-left: 10px;
 }
 
 .food-items {

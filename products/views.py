@@ -58,6 +58,18 @@ def custom_details(request, product_id):
     """ A view to add custom burger product details """
 
     product = get_object_or_404(Product, pk=product_id)
+    buns = Ingredients.objects.filter(
+        cat__contains='Bun')
+    sauce = Ingredients.objects.filter(
+        cat__contains='Sauce')
+    burger = Ingredients.objects.filter(
+        cat__contains='Burger')
+    cheese = Ingredients.objects.filter(
+        cat__contains='Cheese')
+    salad = Ingredients.objects.filter(
+        cat__contains='Salad')
+    extras = Ingredients.objects.filter(
+        cat__contains='Extras')
     ingredient = Ingredients.objects.all()
     form = CustomForm()
     if request.method == 'POST':
@@ -72,6 +84,12 @@ def custom_details(request, product_id):
         'product': product,
         'ingredient': ingredient,
         'form': form,
+        'sauce': sauce,
+        'burger': burger,
+        'cheese': cheese,
+        'salad': salad,
+        'extras': extras,
+        'buns': buns,
     }
 
     return render(request, 'products/custom_details.html', context)
