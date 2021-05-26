@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<section class="review-hero" id="hero">
+    <div class="container"></div>
+</section>
+<section class="reviews bg-white">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-md-8 col-lg-8 offset-lg-2">
+                <div class="section-info">
+                    <div class="section-description">
+                        <div class="about-headline">
+                            <h2 class="sub-headline text-black">Custom Burgers</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-2 col-lg-2 justify-content-md-end">
+                <a href="{% url 'home' %}" class="btn btn-lg m-2 btn-secondary" type="button">Close</a>
+            </div>       
+        </div>
+        <div class="row created-burgers">
+            <div class="col-12">
+            </div>
+        </div>
+        {% for product in products %}
+            {% if product.custom == True %}
+                <div class="col-12 col-md-6 col-lg-6 offset-lg-5">
+                    <a href="{% url 'custom_details' product.id %}" class="btn btn-lg btn-secondary">Create Your Own</a>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+
+{% endblock %}

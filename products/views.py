@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
-from .models import Product, Category, Ingredients
+from .models import Product, Category, Ingredients, Custom_burger
 
 from .forms import CustomForm, ProductForm
 
@@ -52,47 +52,6 @@ def product_details(request, product_id):
     }
 
     return render(request, 'products/product_details.html', context)
-
-
-def custom_details(request, product_id):
-    """ A view to add custom burger product details """
-
-    product = get_object_or_404(Product, pk=product_id)
-    buns = Ingredients.objects.filter(
-        cat__contains='Bun')
-    sauce = Ingredients.objects.filter(
-        cat__contains='Sauce')
-    burger = Ingredients.objects.filter(
-        cat__contains='Burger')
-    cheese = Ingredients.objects.filter(
-        cat__contains='Cheese')
-    salad = Ingredients.objects.filter(
-        cat__contains='Salad')
-    extras = Ingredients.objects.filter(
-        cat__contains='Extras')
-    ingredient = Ingredients.objects.all()
-    form = CustomForm()
-    if request.method == 'POST':
-        form = CustomForm(request.POST, instance=product)
-        if form.is_valid():
-            custom_name = form.save(commit=False)
-            ingredient.custom_name = ingredient
-            custom_name.save()
-            return redirect('cart')
-
-    context = {
-        'product': product,
-        'ingredient': ingredient,
-        'form': form,
-        'sauce': sauce,
-        'burger': burger,
-        'cheese': cheese,
-        'salad': salad,
-        'extras': extras,
-        'buns': buns,
-    }
-
-    return render(request, 'products/custom_details.html', context)
 
 
 @login_required
@@ -160,3 +119,61 @@ def delete_product(request, product_id):
     product.delete()
     messages.success(request, 'Product Deleted!')
     return redirect(reverse('products'))
+
+
+def custom(request):
+    """ A view to display all custom_burgers """
+    burgers = Custom_burger.objects.all()
+    products = Product.objects.all()
+
+    template = 'products/custom.html'
+
+    context = {
+        'burgers': burgers,
+        'products': products,
+    }
+
+    return render(request, template, context)
+
+
+def custom_details(request, product_id):
+    """ A view to add custom burger product details """
+
+    product = get_object_or_404(Product, pk=product_id)
+    buns = Ingredients.objects.filter(
+        cat__contains='Bun')
+    sauce = Ingredients.objects.filter(
+        cat__contains='Sauce')
+    burger = Ingredients.objects.filter(
+        cat__contains='Burger')
+    cheese = Ingredients.objects.filter(
+        cat__contains='Cheese')
+    salad = Ingredients.objects.filter(
+        cat__contains='Salad')
+    extras = Ingredients.objects.filter(
+        cat__contains='Extras')
+    ingredient = Ingredients.objects.all()
+    form = CustomForm()
+    if request.method == 'POST':
+        form = CustomForm(request.POST, instance=product)
+        if form.is_valid():
+            custom_name = form.save(commit=False)
+            ingredient.custom_name = ingredient
+            custom_name.save()
+            return redirect('cart')
+
+    template = 'products/custom_details.html'
+
+    context = {
+        'product': product,
+        'ingredient': ingredient,
+        'form': form,
+        'sauce': sauce,
+        'burger': burger,
+        'cheese': cheese,
+        'salad': salad,
+        'extras': extras,
+        'buns': buns,
+    }
+
+    return render(request, template, context)

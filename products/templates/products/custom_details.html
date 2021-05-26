@@ -38,76 +38,8 @@
         <hr>
         <div class="col-12">
             <div class="form-container text-black">
-                <h4 class="text-center"><strong>Choose your Ingredients: </strong></h4>
                 <form class="form" action="{% url 'add_to_cart' product.id %}" method="POST">
                     {% csrf_token %}
-                    <h4 class="pl-3">Bun</h4>
-                    {% for item in buns %}
-                        <ul class="ingredients">
-                            <li>
-                                <label>
-                                    <input type="checkbox" name="ingredients">
-                                    <div class="text-white text-center name">{{ item.name }}</div>
-                                </label>
-                            </li>
-                        </ul>
-                    {% endfor %}
-                    <h4 class="pl-3">Sauce</h4>
-                    {% for item in sauce %}
-                        <ul class="ingredients">
-                            <li>
-                                <label>
-                                    <input type="checkbox" name="ingredients">
-                                    <div class="text-white text-center name">{{ item.name }}</div>
-                                </label>
-                            </li>
-                        </ul>
-                    {% endfor %}
-                    <h4 class="pl-3">Burger</h4>
-                    {% for item in burger %}
-                        <ul class="ingredients">
-                            <li>
-                                <label>
-                                    <input type="checkbox" name="ingredients">
-                                    <div class="text-white text-center name">{{ item.name }}</div>
-                                </label>
-                            </li>
-                        </ul>
-                    {% endfor %}
-                    <h4 class="pl-3">Cheese</h4>
-                    {% for item in cheese %}
-                        <ul class="ingredients">
-                            <li>
-                                <label>
-                                    <input type="checkbox" name="ingredients">
-                                    <div class="text-white text-center name">{{ item.name }}</div>
-                                </label>
-                            </li>
-                        </ul>
-                    {% endfor %}
-                    <h4 class="pl-3">Salad</h4>
-                    {% for item in salad %}
-                        <ul class="ingredients">
-                            <li>
-                                <label>
-                                    <input type="checkbox" name="ingredients">
-                                    <div class="text-white text-center name">{{ item.name }}</div>
-                                </label>
-                            </li>
-                        </ul>
-                    {% endfor %}
-                    <h4 class="pl-3">Extras</h4>
-                    {% for item in extras %}
-                        <ul class="ingredients">
-                            <li>
-                                <label>
-                                    <input type="checkbox" name="ingredients">
-                                    <div class="text-white text-center name">{{ item.name }}</div>
-                                </label>
-                            </li>
-                        </ul>
-                    {% endfor %}
-
                     <div class="col-12 col-md-6 col-lg-4 offset-lg-4">
                         <h4><strong>Enter Your Burger Name:</strong></h4>
                         <input type="text" name="custom_name" class="text-black w-100">
@@ -138,6 +70,75 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="col-10 offset-lg-1">
+                        <h4 class="text-center"><strong>Choose your Ingredients: </strong></h4>
+                        <h4 class="pl-3">Bun</h4>
+                        {% for item in buns %}
+                        <ul class="ingredients">
+                            <li>
+                                <label>
+                                    <input type="checkbox" name="ingredients">
+                                        <div class="text-white text-center name">{{ item.name }}</div>
+                                    </label>
+                                </li>
+                            </ul>
+                        {% endfor %}
+                        <h4 class="pl-3">Sauce</h4>
+                        {% for item in sauce %}
+                            <ul class="ingredients">
+                                <li>
+                                    <label>
+                                        <input type="checkbox" name="ingredients">
+                                        <div class="text-white text-center name">{{ item.name }}</div>
+                                    </label>
+                                </li>
+                            </ul>
+                        {% endfor %}
+                        <h4 class="pl-3">Burger</h4>
+                        {% for item in burger %}
+                            <ul class="ingredients">
+                                <li>
+                                    <label>
+                                        <input type="checkbox" name="ingredients">
+                                        <div class="text-white text-center name">{{ item.name }}</div>
+                                    </label>
+                                </li>
+                            </ul>
+                        {% endfor %}
+                        <h4 class="pl-3">Cheese</h4>
+                        {% for item in cheese %}
+                            <ul class="ingredients">
+                                <li>
+                                    <label>
+                                        <input type="checkbox" name="ingredients">
+                                        <div class="text-white text-center name">{{ item.name }}</div>
+                                    </label>
+                                </li>
+                            </ul>
+                        {% endfor %}
+                        <h4 class="pl-3">Salad</h4>
+                        {% for item in salad %}
+                            <ul class="ingredients">
+                                <li>
+                                    <label>
+                                        <input type="checkbox" name="ingredients">
+                                        <div class="text-white text-center name">{{ item.name }}</div>
+                                    </label>
+                                </li>
+                            </ul>
+                        {% endfor %}
+                        <h4 class="pl-3">Extras</h4>
+                        {% for item in extras %}
+                            <ul class="ingredients">
+                                <li>
+                                    <label>
+                                        <input type="checkbox" name="ingredients">
+                                        <div class="text-white text-center name">{{ item.name }}</div>
+                                    </label>
+                                </li>
+                            </ul>
+                        {% endfor %}
                     </div>
                     <div class="col-12 col-md-6 col-lg-4 offset-lg-4">
                         <a href="{% url 'products' %}" class="btn btn-lg btn-secondary">
