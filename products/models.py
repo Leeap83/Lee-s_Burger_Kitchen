@@ -28,7 +28,6 @@ class Product(models.Model):
     ingredients = models.ManyToManyField(
         'Ingredients', related_name='ingredients', blank=True)
     custom = models.BooleanField(default=False)
-    custom_name = models.CharField(max_length=254, null=True, blank=True)
 
     def __str__(self):
         return self.name
@@ -46,13 +45,14 @@ class Ingredients(models.Model):
 
 class Custom_burger(models.Model):
 
+    custom_name = models.CharField(max_length=254)
     ingredients = models.ManyToManyField(
         'Ingredients', related_name='ingredient', blank=True)
-    price = models.DecimalField(max_digits=6, decimal_places=2)
     category = models.ForeignKey(
         'Category', null=True, blank=True, on_delete=models.CASCADE,
         related_name='custom_burger')
-    custom_name = models.CharField(max_length=254)
+    likes = models.PositiveIntegerField(default=0)
+    dislikes = models.PositiveIntegerField(default=0)
 
     def __str__(self):
         return self.custom_name

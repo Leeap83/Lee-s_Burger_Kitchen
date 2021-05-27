@@ -23,12 +23,6 @@ class ProductForm(forms.ModelForm):
 
 
 class CustomForm(forms.ModelForm):
-    custom_name = forms.CharField(
-        widget=forms.TextInput(attrs={'class': 'form-text'}), required=False)
-    ingredients = forms.ModelChoiceField(
-        queryset=Ingredients.objects, empty_label=None,
-        widget=forms.CheckboxSelectMultiple)
-
     class Meta:
         model = Custom_burger
         fields = (

@@ -152,21 +152,22 @@ def custom_details(request, product_id):
         cat__contains='Salad')
     extras = Ingredients.objects.filter(
         cat__contains='Extras')
-    ingredient = Ingredients.objects.all()
+
     form = CustomForm()
+
     if request.method == 'POST':
-        form = CustomForm(request.POST, instance=product)
+        form = CustomForm(request.POST)
         if form.is_valid():
-            custom_name = form.save(commit=False)
-            ingredient.custom_name = ingredient
-            custom_name.save()
-            return redirect('cart')
+            form.save()
+            messages.success(request, 'Successfully updated product!')
+            
+    else:
+        form = CustomForm()
 
     template = 'products/custom_details.html'
 
     context = {
         'product': product,
-        'ingredient': ingredient,
         'form': form,
         'sauce': sauce,
         'burger': burger,

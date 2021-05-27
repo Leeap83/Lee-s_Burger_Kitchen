@@ -22,7 +22,19 @@
             </div>       
         </div>
         <div class="row created-burgers">
-            <div class="col-12">
+                {% for item in burgers %}
+                <div class="card" style="width: 18rem;">
+                    <div class="imgbx">
+                        <img src="https://i.imgur.com/eAhwOdf.jpg?1" class="card-img-top" alt="{{ item.custom_name }}">
+                    </div>
+                    <div class="content">
+                        <h2 class="card-title">{{ item.custom_name}}</h2>
+                        <p class="card-text">Ingredients:
+                            {% for ing in item.ingredients.all %} {{ing.name}}, {% endfor %}
+                        </p>
+                    </div>
+                </div>
+                {% endfor %}
             </div>
         </div>
         {% for product in products %}
