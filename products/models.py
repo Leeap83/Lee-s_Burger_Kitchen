@@ -51,8 +51,6 @@ class Custom_burger(models.Model):
     category = models.ForeignKey(
         'Category', null=True, blank=True, on_delete=models.CASCADE,
         related_name='custom_burger')
-    likes = models.PositiveIntegerField(default=0)
-    dislikes = models.PositiveIntegerField(default=0)
 
     def __str__(self):
         return self.custom_name
