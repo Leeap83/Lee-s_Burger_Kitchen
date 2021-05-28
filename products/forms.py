@@ -1,6 +1,9 @@
 from django import forms
 from .widgets import CustomClearableFileInput
-from .models import Product, Ingredients, Category, Custom_burger
+from .models import Product, Category, Custom_burger
+from crispy_forms.helper import FormHelper
+from crispy_forms.layout import Submit, Layout, Row, Column
+from crispy_forms.bootstrap import InlineCheckboxes, FormActions
 
 
 class ProductForm(forms.ModelForm):
@@ -28,4 +31,22 @@ class CustomForm(forms.ModelForm):
         fields = (
             'custom_name',
             'ingredients',
+        )
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.form_method = 'post'
+
+        self.helper.layout = Layout(
+            Row(
+                Column('custom_name'),
+            ),
+            InlineCheckboxes('ingredients'),
+            FormActions(
+                Submit(
+                    'create_burger',
+                    'Create Burger',
+                    css_class='btn btn-secondary')
+            )
         )

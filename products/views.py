@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
-from .models import Product, Category, Ingredients, Custom_burger
+from .models import Product, Category, Custom_burger
 
 from .forms import CustomForm, ProductForm
 
@@ -136,31 +136,18 @@ def custom(request):
     return render(request, template, context)
 
 
+@login_required
 def custom_details(request, product_id):
     """ A view to add custom burger product details """
 
     product = get_object_or_404(Product, pk=product_id)
-    buns = Ingredients.objects.filter(
-        cat__contains='Bun')
-    sauce = Ingredients.objects.filter(
-        cat__contains='Sauce')
-    burger = Ingredients.objects.filter(
-        cat__contains='Burger')
-    cheese = Ingredients.objects.filter(
-        cat__contains='Cheese')
-    salad = Ingredients.objects.filter(
-        cat__contains='Salad')
-    extras = Ingredients.objects.filter(
-        cat__contains='Extras')
-
     form = CustomForm()
 
     if request.method == 'POST':
         form = CustomForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Successfully updated product!')
-            
+            messages.success(request, 'Successfully created Burger!')
     else:
         form = CustomForm()
 
@@ -169,12 +156,6 @@ def custom_details(request, product_id):
     context = {
         'product': product,
         'form': form,
-        'sauce': sauce,
-        'burger': burger,
-        'cheese': cheese,
-        'salad': salad,
-        'extras': extras,
-        'buns': buns,
     }
 
     return render(request, template, context)

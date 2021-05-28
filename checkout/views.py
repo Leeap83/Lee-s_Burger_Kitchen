@@ -1,4 +1,9 @@
-from django.shortcuts import (render, redirect, reverse, get_object_or_404, HttpResponse)
+from django.shortcuts import (
+    render,
+    redirect,
+    reverse,
+    get_object_or_404,
+    HttpResponse)
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -7,7 +12,7 @@ from django.utils.timezone import datetime
 
 from .forms import OrderForm, StatusForm
 from .models import Order, OrderLineItem
-from products.models import Product
+from products.models import Product, Custom_burger
 from profiles.models import UserProfile
 from profiles.forms import UserProfileForm
 from cart.contexts import cart_contents
@@ -194,12 +199,28 @@ def dashboard(request):
 
 
 @login_required
+def all_orders(request):
+    """ A view to return all orders"""
+    if not request.user.is_superuser:
+        messages.error(request, 'Access Denied')
+        return redirect(reverse('home'))
+
+    orders = Order.objects.all()
+    context = {
+        'orders': orders,
+    }
+
+    return render(request, 'checkout/all_orders.html', context)
+
+
+@login_required
 def view_order(request, pk):
     """View Order details and update status"""
     if not request.user.is_superuser:
         messages.error(request, 'Access Denied')
         return redirect(reverse('home'))
 
+    custom = Custom_burger.objects.all()
     order = Order.objects.get(id=pk)
     product = Product.objects.all()
     form = StatusForm(instance=order)
@@ -214,6 +235,7 @@ def view_order(request, pk):
         'order': order,
         'form': form,
         'product': product,
+        'custom': custom,
 
     }
 

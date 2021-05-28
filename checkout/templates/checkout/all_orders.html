@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<!-- <section class="about-hero" id="hero">
+    <div class="container"></div>
+</section> -->
+<div class="container-fluid bg-white">
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <a href="{% url 'home' %}" class="btn btn-lg m-2 btn-secondary" type="button">Close</a>
+    </div>
+</div>
+<section class="our-story bg-white">
+    <div class="container">
+        <div class="col-12 col-md-8 col-lg-6 offset-lg-3">
+            <div class="section-info">
+                <div class="section-description">
+                    <div class="about-headline">
+                        <h2 class="sub-headline text-black">All Orders</h2>
+                    </div>
+                </div>
+            </div>    
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-12 mt-5">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Order ID</th>
+                            <th scope="col">Order Total</th>
+                            <th scope="col">Ordered At</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Street</th>
+                            <th scope="col">City or Town</th>
+                            <th scope="col">Postcode</th>
+                            <th scope="col">Order Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="active">
+                        {% for order in orders %}
+                        <tr>
+                            <th scope="row">
+                                <a href="{% url 'view_order' order.pk %}" class="text-black">{{order.pk}}</a>
+                            </th>
+                            <td>{{order.order_total}}</td>
+                            <td>{{order.created_on.time}}</td>
+                            <td>{{order.name}}</td>
+                            <td>{{order.email}}</td>
+                            <td>{{order.street}}</td>
+                            <td>{{order.town_or_city}}</td>
+                            <td>{{order.postcode}}</td>
+                            <td class="order-status">{{order.order_status}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+

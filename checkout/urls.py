@@ -8,5 +8,6 @@ urlpatterns = [
     path('cache_checkout_data/', views.cache_checkout_data, name='cache_checkout_data'),
     path('wh/', webhook, name='webhook'),
     path('dashboard/', views.dashboard, name='dashboard'),
+    path('all_orders/', views.all_orders, name='all_orders'),
     path('view_order/<str:pk>', views.view_order, name='view_order'),
 ]
