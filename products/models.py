@@ -51,6 +51,7 @@ class Custom_burger(models.Model):
     category = models.ForeignKey(
         'Category', null=True, blank=True, on_delete=models.CASCADE,
         related_name='custom_burger')
+    price = models.DecimalField(max_digits=6, decimal_places=2, default='10.99', editable=False)
 
     def __str__(self):
         return self.custom_name
