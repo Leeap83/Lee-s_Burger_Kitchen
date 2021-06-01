@@ -19,6 +19,7 @@ def our_suppliers(request):
     return render(request, 'customer/suppliers.html')
 
 
+@login_required
 def place_order(request):
     """ A view to show all products """
 
