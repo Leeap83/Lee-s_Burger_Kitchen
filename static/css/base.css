@@ -689,6 +689,10 @@ th {
     .our-story p {
         font-size: 1.5rem;
     }
+
+    #topnav ul li p {
+        font-size: 1.2rem;
+    }
 }
 
 form {
@@ -707,7 +711,6 @@ form {
 }
 
 /* Animations */
-
 @keyframes fadeUp {
     from {
         transform: translateY(4rem);
