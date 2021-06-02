@@ -512,6 +512,16 @@ th {
     font-size: 1.5rem;
 }
 
+.btt-button {
+    height: 42px;
+    width: 42px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background-color: black;
+    border: black;
+}
+
 .btt-link,
 .update-link,
 .remove-item {
@@ -692,6 +702,20 @@ th {
 
     #topnav ul li p {
         font-size: 1.2rem;
+    }
+
+    .btt-button {
+        height: 32px;
+        width: 32px;
+        position: fixed;
+        bottom: 10px;
+        left: 10px;
+        background-color: black;
+        border: black;
+    }
+    
+    .btt-button a i {
+        font-size: 1rem;
     }
 }
 

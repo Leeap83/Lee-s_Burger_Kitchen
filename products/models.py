@@ -21,7 +21,8 @@ class Product(models.Model):
         'Category', null=True, blank=True, on_delete=models.SET_NULL)
     name = models.CharField(max_length=254)
     description = models.TextField()
-    price = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
+    price = models.DecimalField(
+        max_digits=6, decimal_places=2, null=True, blank=True)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
     vegetarian = models.BooleanField()
@@ -51,7 +52,8 @@ class Custom_burger(models.Model):
     category = models.ForeignKey(
         'Category', null=True, blank=True, on_delete=models.CASCADE,
         related_name='custom_burger')
-    price = models.DecimalField(max_digits=6, decimal_places=2, default='10.99', editable=False)
+    price = models.DecimalField(
+        max_digits=6, decimal_places=2, default='10.99', editable=False)
 
     def __str__(self):
         return self.custom_name
