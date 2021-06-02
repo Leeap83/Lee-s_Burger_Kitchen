@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content%}
+
+<!-- 404 Error handler, for easy navigation if a user enters incorrect URL-->
+<div class="container-fluid  error-container">
+    <div class="col-12 col-md-8 col-lg-6 offset-lg-3">
+        <div class="about-headline">
+            <h1 class="sub-headline text-white"> 
+                 404 error!
+            </h1>
+            <h3 class="mt-5 text-white headlines">
+                Oops! Page Not Found...
+            </h3>
+            
+            <a href="{% url 'home' %}" class="btn btn-secondary btn-lg mt-5">
+                <i class="fas fa-home mr-1"></i>&nbsp;Back&nbsp;Home
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

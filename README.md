@@ -151,9 +151,11 @@ The [LBK](docs/LBK.pdf) wireframes can be found here.
 
 **Libraries & Frameworks**
    
-[Django]():
+[Django](https://www.djangoproject.com/):
+ Django Framework was used to creat this project. 
 
-[Bootstrap]():
+[Bootstrap](https://getbootstrap.com/):
+ Bootstrap was used throughout the site to help design and customize and help with 
  
 [Font Awesome](https://fontawesome.com/):
  Font Awesome was used to provide the Icons throughout this website.
@@ -162,9 +164,10 @@ The [LBK](docs/LBK.pdf) wireframes can be found here.
  Google fonts was used to import the font into the style.css file
 
 [JQuery](https://jquery.com/):
- JQuery was used to run the scripts for the following:
+ JQuery was used to enable scripts 
 
-[Pillow]():
+[Pillow](https://pypi.org/project/Pillow/):
+ Pillow was installed as imaging library for this project.
  
 [Gunicorn](https://gunicorn.org/):
  Was installed and used as the webserver
