@@ -9,6 +9,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.conf import settings
 from django.utils.timezone import datetime
+from django.db.models import Q
 
 from .forms import OrderForm, StatusForm
 from .models import Order, OrderLineItem
@@ -204,8 +205,23 @@ def all_orders(request):
         return redirect(reverse('home'))
 
     orders = Order.objects.all()
+    query = None
+
+    if request.GET:
+        if 'q' in request.GET:
+            query = request.GET['q']
+            if not query:
+                messages.error(
+                    request, "No Orders found")
+                return redirect(reverse('orders'))
+
+            queries = Q(
+                name__icontains=query) | Q(email__icontains=query)
+            orders = orders.filter(queries)
+    
     context = {
         'orders': orders,
+        'search_term': query,
     }
 
     return render(request, 'checkout/all_orders.html', context)

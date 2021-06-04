@@ -23,13 +23,14 @@
         </div>
         <div class="row user-review">
             <div class="col-12">
+                <p class="text-center">Below are customers experience of Lee's Burger Kitchen and the service they recieved.</p>
                 {% for rev in reviews %}
                 <div id="accordion">
                     <div class="card">
                         <div class="card-header bg-secondary" id="heading{{ rev.id }}">
                             <h4 class="mb-0">
                                 <a class=" text-white" data-toggle="collapse" href="#collapse{{ rev.id }}" data-target="#collapse{{ rev.id }}" aria-expanded="false" aria-controls="collapseOne">
-                                    {{ rev.title }} &nbsp; (<small>Date: {{ rev.date.date }}</small>)
+                                    Review Title: {{ rev.title }} &nbsp; (<small>Date: {{ rev.date.date }}</small>)
                                 </a>
                             </h4>
                         </div>
@@ -37,7 +38,7 @@
                         <div id="collapse{{ rev.id }}" class="collapse" aria-labelledby="heading{{ rev.id }}" data-parent="#accordion">
                             <div class="card-body">
                                 <p class="card-text text-muted">Comment: {{ rev.comment }}</p>
-                                <p class="card-text text-muted">Rating: {{ rev.rate }}</p>
+                                <p class="card-text text-muted">Rating: {{ rev.rate }} out of 5</p>
                                 <p class="card-text text-muted">Reviewed by: {{ rev.user }}</p>
                                 <p class="card-text text-muted">Date: {{ rev.date.date }}</p>
                             </div>

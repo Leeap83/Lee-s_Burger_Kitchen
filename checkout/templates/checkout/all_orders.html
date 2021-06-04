@@ -21,6 +21,21 @@
                 </div>
             </div>    
         </div>
+        <div class="col-md-6 offset-md-3">
+            <form method="GET" action="{% url 'all_orders' %}">
+                <div class="input-group w-100">
+                    <input class="form-control border border-black rounded-0" type="text" name="q"
+                        placeholder="Search Orders">
+                    <div class="input-group-append">
+                        <button class="form-control btn btn-black border border-black rounded-0" type="submit">
+                            <span class="icon">
+                                <i class="fas fa-search"></i>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
         <div class="row justify-content-center">
             <div class="col-12 mt-5" style="overflow-x: auto;">
                 <table class="table table-hover">
@@ -31,9 +46,6 @@
                             <th scope="col">Ordered At</th>
                             <th scope="col">Name</th>
                             <th scope="col">Email</th>
-                            <th scope="col">Street</th>
-                            <th scope="col">City or Town</th>
-                            <th scope="col">Postcode</th>
                             <th scope="col">Order Status</th>
                         </tr>
                     </thead>
@@ -43,13 +55,10 @@
                             <th scope="row">
                                 <a href="{% url 'view_order' order.pk %}" class="text-black">{{order.pk}}</a>
                             </th>
-                            <td>{{order.order_total}}</td>
+                            <td>£{{order.order_total}}</td>
                             <td>{{order.created_on.time}}</td>
                             <td>{{order.name}}</td>
                             <td>{{order.email}}</td>
-                            <td>{{order.street}}</td>
-                            <td>{{order.town_or_city}}</td>
-                            <td>{{order.postcode}}</td>
                             <td class="order-status">{{order.order_status}}</td>
                         </tr>
                         {% endfor %}
