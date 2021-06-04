@@ -213,10 +213,10 @@ def all_orders(request):
             if not query:
                 messages.error(
                     request, "No Orders found")
-                return redirect(reverse('orders'))
+                return redirect(reverse('all_orders'))
 
             queries = Q(
-                name__icontains=query) | Q(email__icontains=query)
+                name__icontains=query) | Q(email__icontains=query) | Q(id__icontains=query) | Q(order_status__icontains=query) | Q(created_on__icontains=query)
             orders = orders.filter(queries)
     
     context = {
