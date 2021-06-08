@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
-from .models import Product, Category, Custom_burger
+from .models import Product, Category, Custom_burger, Ingredients
 
 from .forms import CustomForm, ProductForm
 
@@ -11,7 +11,6 @@ from .forms import CustomForm, ProductForm
 
 def all_products(request):
     """ A view to show all products """
-
     products = Product.objects.all()
     categories = None
     query = None
@@ -139,8 +138,8 @@ def custom(request):
 @login_required
 def custom_details(request, product_id):
     """ A view to add custom burger product details """
-
     product = get_object_or_404(Product, pk=product_id)
+    ingredients = Ingredients.objects.all()
     form = CustomForm()
 
     if request.method == 'POST':
@@ -156,6 +155,8 @@ def custom_details(request, product_id):
     context = {
         'product': product,
         'form': form,
+        'ingredients': ingredients,
+
     }
 
     return render(request, template, context)

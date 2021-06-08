@@ -218,7 +218,7 @@ def all_orders(request):
             queries = Q(
                 name__icontains=query) | Q(email__icontains=query) | Q(id__icontains=query) | Q(order_status__icontains=query) | Q(created_on__icontains=query)
             orders = orders.filter(queries)
-    
+
     context = {
         'orders': orders,
         'search_term': query,
