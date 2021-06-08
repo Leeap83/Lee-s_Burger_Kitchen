@@ -47,8 +47,6 @@ class Ingredients(models.Model):
 class Custom_burger(models.Model):
 
     custom_name = models.CharField(max_length=254)
-    ingredients = models.ManyToManyField(
-        'Ingredients', related_name='ingredient', blank=True)
     buns = models.ManyToManyField(
         'Ingredients', related_name='buns', blank=True)
     burger = models.ManyToManyField(

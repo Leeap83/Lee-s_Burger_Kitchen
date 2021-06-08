@@ -47,6 +47,7 @@ class CustomForm(forms.ModelForm):
         self.fields['cheese'].queryset = Ingredients.objects.filter(cat='Cheese')
         self.fields['extras'].queryset = Ingredients.objects.filter(cat='Extras')
         self.helper = FormHelper()
+        self.helper.label_class = "bold"
         self.helper.form_method = 'post'
 
         self.helper.layout = Layout(
