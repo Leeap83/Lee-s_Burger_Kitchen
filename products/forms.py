@@ -37,7 +37,7 @@ class CustomForm(forms.ModelForm):
             'cheese',
             'extras',
         )
-    
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['buns'].queryset = Ingredients.objects.filter(cat='Bun')
