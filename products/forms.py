@@ -31,7 +31,7 @@ class CustomForm(forms.ModelForm):
         fields = (
             'custom_name',
             # 'ingredients',
-            'buns',
+            'bun',
             'burger',
             'sauce',
             'salads',
@@ -42,7 +42,7 @@ class CustomForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         # self.fields['ingredients'].queryset = Ingredients.objects.order_by('cat')
-        self.fields['buns'].queryset = Ingredients.objects.filter(cat='Bun')
+        self.fields['bun'].queryset = Ingredients.objects.filter(cat='Bun')
         self.fields['burger'].queryset = Ingredients.objects.filter(cat='Burger')
         self.fields['sauce'].queryset = Ingredients.objects.filter(cat='Sauce')
         self.fields['salads'].queryset = Ingredients.objects.filter(cat='Salad')
@@ -56,7 +56,7 @@ class CustomForm(forms.ModelForm):
                 Column('custom_name'),
             ),
             # InlineCheckboxes('ingredients'),
-            InlineCheckboxes('buns'),
+            InlineCheckboxes('bun'),
             InlineCheckboxes('burger'),
             InlineCheckboxes('sauce'),
             InlineCheckboxes('salads'),
