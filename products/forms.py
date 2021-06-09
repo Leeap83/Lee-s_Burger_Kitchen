@@ -32,22 +32,22 @@ class CustomForm(forms.ModelForm):
             'custom_name',
             # 'ingredients',
             'bun',
-            'burger',
-            'sauce',
-            'salads',
-            'cheese',
-            'extras',
+            'burgers',
+            'sauces',
+            'salad',
+            'cheeses',
+            'extra',
         )
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         # self.fields['ingredients'].queryset = Ingredients.objects.order_by('cat')
         self.fields['bun'].queryset = Ingredients.objects.filter(cat='Bun')
-        self.fields['burger'].queryset = Ingredients.objects.filter(cat='Burger')
-        self.fields['sauce'].queryset = Ingredients.objects.filter(cat='Sauce')
-        self.fields['salads'].queryset = Ingredients.objects.filter(cat='Salad')
-        self.fields['cheese'].queryset = Ingredients.objects.filter(cat='Cheese')
-        self.fields['extras'].queryset = Ingredients.objects.filter(cat='Extras')
+        self.fields['burgers'].queryset = Ingredients.objects.filter(cat='Burger')
+        self.fields['sauces'].queryset = Ingredients.objects.filter(cat='Sauce')
+        self.fields['salad'].queryset = Ingredients.objects.filter(cat='Salad')
+        self.fields['cheeses'].queryset = Ingredients.objects.filter(cat='Cheese')
+        self.fields['extra'].queryset = Ingredients.objects.filter(cat='Extras')
         self.helper = FormHelper()
         self.helper.form_method = 'post'
 
@@ -57,11 +57,11 @@ class CustomForm(forms.ModelForm):
             ),
             # InlineCheckboxes('ingredients'),
             InlineCheckboxes('bun'),
-            InlineCheckboxes('burger'),
-            InlineCheckboxes('sauce'),
-            InlineCheckboxes('salads'),
-            InlineCheckboxes('cheese'),
-            InlineCheckboxes('extras'),
+            InlineCheckboxes('burgers'),
+            InlineCheckboxes('sauces'),
+            InlineCheckboxes('salad'),
+            InlineCheckboxes('cheeses'),
+            InlineCheckboxes('extra'),
 
             FormActions(
                 Submit(

@@ -51,16 +51,16 @@ class Custom_burger(models.Model):
     #     'Ingredients', related_name='ingredient', blank=True)
     bun = models.ManyToManyField(
         'Ingredients', related_name='bun', blank=True)
-    burger = models.ManyToManyField(
-        'Ingredients', related_name='burger', blank=True)
-    sauce = models.ManyToManyField(
-        'Ingredients', related_name='sauce', blank=True)
-    salads = models.ManyToManyField(
-        'Ingredients', related_name='salads', blank=True)
-    cheese = models.ManyToManyField(
-        'Ingredients', related_name='cheese', blank=True)
-    extras = models.ManyToManyField(
-        'Ingredients', related_name='extras', blank=True)
+    burgers = models.ManyToManyField(
+        'Ingredients', related_name='burgers', blank=True)
+    sauces = models.ManyToManyField(
+        'Ingredients', related_name='sauces', blank=True)
+    salad = models.ManyToManyField(
+        'Ingredients', related_name='salad', blank=True)
+    cheeses = models.ManyToManyField(
+        'Ingredients', related_name='cheeses', blank=True)
+    extra = models.ManyToManyField(
+        'Ingredients', related_name='extra', blank=True)
     category = models.ForeignKey(
         'Category', null=True, blank=True, on_delete=models.CASCADE,
         related_name='custom_burger')
