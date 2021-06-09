@@ -38,7 +38,6 @@ class Ingredients(models.Model):
 
     name = models.CharField(max_length=30)
     cat = models.CharField(max_length=100, null=True, blank=True)
-    # cyo = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name
@@ -49,18 +48,12 @@ class Custom_burger(models.Model):
     custom_name = models.CharField(max_length=254)
     # ingredients = models.ManyToManyField(
     #     'Ingredients', related_name='ingredient', blank=True)
-    bun = models.ManyToManyField(
-        'Ingredients', related_name='bun', blank=True)
-    burgers = models.ManyToManyField(
-        'Ingredients', related_name='burgers', blank=True)
-    sauces = models.ManyToManyField(
-        'Ingredients', related_name='sauces', blank=True)
-    salad = models.ManyToManyField(
-        'Ingredients', related_name='salad', blank=True)
-    cheeses = models.ManyToManyField(
-        'Ingredients', related_name='cheeses', blank=True)
-    extra = models.ManyToManyField(
-        'Ingredients', related_name='extra', blank=True)
+    buns = models.CharField(max_length=30, null=True, blank=True)
+    burger = models.CharField(max_length=30, null=True, blank=True)
+    sauce = models.CharField(max_length=30, null=True, blank=True)
+    salads = models.CharField(max_length=30, null=True, blank=True)
+    cheese = models.CharField(max_length=30, null=True, blank=True)
+    extras = models.CharField(max_length=30, null=True, blank=True)
     category = models.ForeignKey(
         'Category', null=True, blank=True, on_delete=models.CASCADE,
         related_name='custom_burger')

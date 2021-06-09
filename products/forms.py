@@ -31,23 +31,23 @@ class CustomForm(forms.ModelForm):
         fields = (
             'custom_name',
             # 'ingredients',
-            'bun',
-            'burgers',
-            'sauces',
-            'salad',
-            'cheeses',
-            'extra',
+            'buns',
+            'burger',
+            'sauce',
+            'salads',
+            'cheese',
+            'extras',
         )
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         # self.fields['ingredients'].queryset = Ingredients.objects.order_by('cat')
-        self.fields['bun'].queryset = Ingredients.objects.filter(cat='bun')
-        self.fields['burgers'].queryset = Ingredients.objects.filter(cat='burger')
-        self.fields['sauces'].queryset = Ingredients.objects.filter(cat='sauce')
-        self.fields['salad'].queryset = Ingredients.objects.filter(cat='salad')
-        self.fields['cheeses'].queryset = Ingredients.objects.filter(cat='cheese')
-        self.fields['extra'].queryset = Ingredients.objects.filter(cat='extras')
+        # self.fields['buns'].queryset = Ingredients.objects.filter(cat='Bun')
+        # self.fields['burger'].queryset = Ingredients.objects.filter(cat='Burger')
+        # self.fields['sauce'].queryset = Ingredients.objects.filter(cat='Sauce')
+        # self.fields['salads'].queryset = Ingredients.objects.filter(cat='Salad')
+        # self.fields['cheese'].queryset = Ingredients.objects.filter(cat='Cheese')
+        # self.fields['extras'].queryset = Ingredients.objects.filter(cat='Extras')
         self.helper = FormHelper()
         self.helper.form_method = 'post'
 
@@ -56,12 +56,12 @@ class CustomForm(forms.ModelForm):
                 Column('custom_name'),
             ),
             # InlineCheckboxes('ingredients'),
-            InlineCheckboxes('bun'),
-            InlineCheckboxes('burgers'),
-            InlineCheckboxes('sauces'),
-            InlineCheckboxes('salad'),
-            InlineCheckboxes('cheeses'),
-            InlineCheckboxes('extra'),
+            InlineCheckboxes('buns'),
+            InlineCheckboxes('burger'),
+            InlineCheckboxes('sauce'),
+            InlineCheckboxes('salads'),
+            InlineCheckboxes('cheese'),
+            InlineCheckboxes('extras'),
 
             FormActions(
                 Submit(
