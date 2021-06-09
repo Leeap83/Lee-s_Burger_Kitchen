@@ -38,7 +38,7 @@ class Ingredients(models.Model):
 
     name = models.CharField(max_length=30)
     cat = models.CharField(max_length=100, null=True, blank=True)
-    cyo = models.BooleanField(default=False)
+    # cyo = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name
@@ -47,23 +47,23 @@ class Ingredients(models.Model):
 class Custom_burger(models.Model):
 
     custom_name = models.CharField(max_length=254)
-    ingredients = models.ManyToManyField(
-        'Ingredients', related_name='ingredient', blank=True)
-    # buns = models.ManyToManyField(
-    #     'Ingredients', related_name='buns', blank=True)
-    # burger = models.ManyToManyField(
-    #     'Ingredients', related_name='burger', blank=True)
-    # sauce = models.ManyToManyField(
-    #     'Ingredients', related_name='sauce', blank=True)
-    # salads = models.ManyToManyField(
-    #     'Ingredients', related_name='salads', blank=True)
-    # cheese = models.ManyToManyField(
-    #     'Ingredients', related_name='cheese', blank=True)
-    # extras = models.ManyToManyField(
-    #     'Ingredients', related_name='extras', blank=True)
-    # category = models.ForeignKey(
-    #     'Category', null=True, blank=True, on_delete=models.CASCADE,
-    #     related_name='custom_burger')
+    # ingredients = models.ManyToManyField(
+    #     'Ingredients', related_name='ingredient', blank=True)
+    buns = models.ManyToManyField(
+        'Ingredients', related_name='buns', blank=True)
+    burger = models.ManyToManyField(
+        'Ingredients', related_name='burger', blank=True)
+    sauce = models.ManyToManyField(
+        'Ingredients', related_name='sauce', blank=True)
+    salads = models.ManyToManyField(
+        'Ingredients', related_name='salads', blank=True)
+    cheese = models.ManyToManyField(
+        'Ingredients', related_name='cheese', blank=True)
+    extras = models.ManyToManyField(
+        'Ingredients', related_name='extras', blank=True)
+    category = models.ForeignKey(
+        'Category', null=True, blank=True, on_delete=models.CASCADE,
+        related_name='custom_burger')
     price = models.DecimalField(
         max_digits=6, decimal_places=2, default='10.99', editable=False)
 
