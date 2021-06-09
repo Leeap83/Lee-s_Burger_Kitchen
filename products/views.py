@@ -156,7 +156,6 @@ def custom_details(request, product_id):
         'product': product,
         'form': form,
         'ingredients': ingredients,
-
     }
 
     return render(request, template, context)
