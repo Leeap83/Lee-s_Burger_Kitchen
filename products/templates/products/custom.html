@@ -30,12 +30,12 @@
                     <div class="content">
                         <h2 class="card-title">{{ item.custom_name}}</h2>
                         <p class="card-text">Ingredients:
-                            {% for ing in item.buns.all %} {{ing.name}}, {% endfor %}
-                            {% for ing in item.burger.all %} {{ing.name}}, {% endfor %}
-                            {% for ing in item.sauce.all %} {{ing.name}}, {% endfor %}
-                            {% for ing in item.salads.all %} {{ing.name}}, {% endfor %}
-                            {% for ing in item.cheese.all %} {{ing.name}}, {% endfor %}
-                            {% for ing in item.extras.all %} {{ing.name}}, {% endfor %}
+                            {% for ing in item.bun.all %} {{ing.name}}, {% endfor %}
+                            {% for ing in item.burgers.all %} {{ing.name}}, {% endfor %}
+                            {% for ing in item.sauces.all %} {{ing.name}}, {% endfor %}
+                            {% for ing in item.salad.all %} {{ing.name}}, {% endfor %}
+                            {% for ing in item.cheeses.all %} {{ing.name}}, {% endfor %}
+                            {% for ing in item.extra.all %} {{ing.name}}, {% endfor %}
                         </p>
                     </div>
                 </div>
