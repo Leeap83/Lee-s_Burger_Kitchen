@@ -52,9 +52,9 @@
                     </thead>
                     <tbody id="active">
                         {% for order in orders %}
-                        <tr>
+                        <tr class="clickable-row" data-href="{% url 'view_order' order.pk %}">
                             <th scope="row">
-                                <a href="{% url 'view_order' order.pk %}" class="text-black">{{order.pk}}</a>
+                                {{order.pk}}
                             </th>
                             <td>£{{order.order_total}}</td>
                             <td>{{order.created_on.time}}</td>
@@ -71,3 +71,13 @@
 </section>
 {% endblock %}
 
+{% block postloadjs %}
+{{ block.super }}
+<script type="text/javascript">
+   jQuery(document).ready(function($) {
+       $(".clickable-row").click(function() {
+           window.location = $(this).data("href");
+       });
+   });
+</script>
+{% endblock %}
