@@ -22,7 +22,19 @@
             </div>       
         </div>
         <div class="row created-burgers">
-                {% for item in burgers %}
+            <div class="col-12 text-center">
+                <p>Below are custom burgers our customers have created and ordered form LBK. Feel free to create your own 
+                    and if we like it you know what happens? You just made the list. 
+                </p>
+            </div>
+            {% for product in products %}
+                {% if product.custom == True %}
+                    <div class="col-12 col-md-6 col-lg-6 offset-lg-5">
+                        <a href="{% url 'custom_details' product.id %}" class="btn btn-lg btn-secondary">Create Your Own</a>
+                    </div>
+                {% endif %}
+            {% endfor %}
+            {% for item in burgers %}
                 <div class="card" style="width: 18rem;">
                     <div class="imgbx">
                         <img src="https://i.imgur.com/eAhwOdf.jpg?1" class="card-img-top" alt="{{ item.custom_name }}">
@@ -39,16 +51,8 @@
                         </p>
                     </div>
                 </div>
-                {% endfor %}
-            </div>
+            {% endfor %}
         </div>
-        {% for product in products %}
-            {% if product.custom == True %}
-                <div class="col-12 col-md-6 col-lg-6 offset-lg-5">
-                    <a href="{% url 'custom_details' product.id %}" class="btn btn-lg btn-secondary">Create Your Own</a>
-                </div>
-            {% endif %}
-        {% endfor %}
     </div>
 </section>
 {% endblock %}
