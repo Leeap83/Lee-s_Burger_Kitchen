@@ -30,7 +30,6 @@ As a User....
 *  I want to view a total price of my purchases and delivery cost, so that I will understand and see how much I will be charged.
 *  I expect to make payments by card in a safe and secure way, so that I won't be concerned about the safety of my card details and won't be charged incorrectly.
 *  I want to receive an email confirmation after checkout, so that I can make sure that payment was successfull.
-*  I want to receive an email confirmation that my product is on the way.
 
 
 ### New Users
@@ -42,7 +41,7 @@ As a returning user....
 *  I want to easily login anytime, so that I can get access to my saved profile details and make next purchase quicker.
 *  I want to reset my password if I forgot it, so that I can get access to my profile again.
 *  I want to be able to change my password, so that I can create the stronger password (e.g.in case I published my old password somewhere) to protect my personal details.
-*  I want to be able to change my email or add the second email, so that I can have an easier access to the website's functionality and to gain more flexibility.
+*  I want to be able to change my email.
  
 ### Website Owner(admin)
 As a Site owner....
@@ -90,34 +89,53 @@ The [LBK](docs/LBK.pdf) wireframes can be found here.
 
 ## Existing Features
 
-* Navbar
-* Footer
-* Home page
-* About Page
-* Menu Page
-* Product Details
-* Shopping Cart
-* Checkout Page
-* User Profile Page
-* Update Profile details
-* User Order History
-* Admin Product Page
-* Owner Order Dashboard
-* Owner Order Details/Status Update
-* Create your own burger page.
+* Home page - The homepage welcomes users to the site with a hero image, text and place order button which indicaates the purpose of the site. further down the page the user can find sections about our burgers, about us, our ingredients, and reviews section. Each section contains, imagery relavant to the section, a brief but informtive narative about the section and a button to take user to that view. 
+* Our Burgers - Our Burgers gives a brief explanation about our burgers with a button to the menu page.
+* About Us - The about us page gives users a little story of who we are, why we are different, delivery info and costs and contact details.
+* Our Suppliers - Our suppliers page gives users breif narrative about our ingredients and providers with links to their sites.
+* User Reviews - The reviews page has a brief narrative informing the users that these are customers reviews of LBK and displays the reviews in a accordian style list displaying review title and date of review the drop down reveals the review, rating, user name, and date. Users are encouraged to click and add review. 
+* Add review - When users click to add a review they are asked to sign in or register if not already, the user name is displayed at the tom and they are asked to leave a title, select a rating from 1 to 5 and leave a comment.
+* Footer - The footer has links to social media accounts these are defaulted to the homepage of the social media platform as no accounts exist for LBK. Opening and closing times and a link to homepage are also included.
+* Logo - The LBK logo is a subtle burger and initial logo which acts a link to the homepage.
+* Navbar - The Navbar allows users an easy navigation through the site for registered and non-registered users. Some navigational links have access only for authenticated users or superusers and is accessible on all pages, the Navbar links consist of Menu, Order, Admin, My Account and Checkout.
+
+### Menu
+* Menu - Menu in the Navbar takes user to the products page, which displays all products in cards format. When the card image is clicked or hovered on the card displays the product name description and more info button for all users, for superusers edit and delete buttons are visible. Included on this page is a search functionality that allows users to search for products based on name and description. Users can filter products based on category type which returns all products in that category.  
+* Product Details - When user clicks on the more info the product details appear which displays name, price, category, ingredients and if sutible for vegetarians. Non authenticated users see an option to login or register to place order, authenticated users can add quantity and add to cart. Superusers also have button options to edit product details or delete product.
+
+### Order
+* Order - Order in the navbar has a dropdown option that allows users the options to place an order, view customer burgers and create a custom burger.   
+* Place Order - Place order allows authenticated users to view a list of all products split by category, adjust the quantity and add to cart. 
+* Build your Own - Custom burgers view allows the users to view all customer burgers created by other users and to create their own.
+* Create your own - Create your own view allows users to create their own brger and add to cart. The ingredients are split by category and the user can choose what they want in their burger as well as give it a creative name.
+
+### Checkout
+* Shopping Cart - The shopping cart displays the product details that have been added to the cart the user can see product image, name, price, quantity, subtotal, cart total, delivery costs and grand total. the user can continue shopping or checkout.
+* Checkout Page - The checkout page utilises Stripe to process user payments, this page has order summary, client details, delivery info and payment info. The Client details and delivery info are populated from the user profile if completed or if they have ticked the option to save delivery info on previous transactions. The payment info uses stripes standard layout of card number, expiry, cvc and also displays error notification regarding card details. Once user clicks secure checout the user is the greeted with a custom loading page followed by a order confirmation, containing order info, order details, delivery info and billing info and a email confirmation is sent to the email address provided.    
+
+### My Account
+* User Profile Page - The authenticated user profile page is accessed from My Account in the navbar, this displays the users profile name, profile picture, username, email, delivery info and order history, which the user cand click on to see the past order confirmtion details 
+* Update Profile details - User can update their username, email, profile picture and delivery info. 
+* User Order History - The Order history gives a brief overview of the order order number, date, status, items and total. Users can click on order number to view the confirmation order.
+
+### Admin
+* Admin - The admin section in the navbar allows store owners the ability to add products, see the orders for that day and all orders.
+* Add Product - The add product allows superusers the abillity to add new products via a form to the database by completing the relevant fields.
+* Todays Orders Dashboard - Todays orders shows the store owner a breakdown of total revenue and a count of how many orders have been recieved that day. Underneath this is two tables one for active orders and the other for completed orders. The tables display basic information about the order id, total, order at, name, email and status. When the row is clicked on the complete order details are displayed.  
+* Order Details/Status Update - The order details display the order info and status which can be updated by store owner to order recieved (default), order cooking, out for delivery and delivered. When order is updated to delivered the order is moved from the active table in the order dashboard to completed.
+* Order History - The Order history allows the store owner the ability to see all orders and has the ability to serach all orders for the name, id, email, status and ordered on that way if a custome complains the owner can search his order and pull up the order information.
 * Django All Auth
-* Sign Up
-* Login
-* Forgot password
-* Logout
-* Back to Top
-* User Reviews
-* Add review
+* Sign Up - The sign up allows new users to register and create a profile by completing the registration form.
+* Login - Allows registered users the ability to sign in. 
+* Forgot Password - Allows users the ability to reset their password.
+* Logout - Allows the users to logout.
+* Back to Top - Features on the right hand side of the screen and allows the users the ability to return back to top of the screen.
 
 ## Future Development
-* Order Delivery tracker 
-* Apple & Google Pay
-* Social Account Login feature 
+* Order Delivery tracker - Allows useres the ability to track their order 
+* Apple & Google Pay - Allows the users to pay using Apple pay or Google Pay
+* Social Account Login feature - Allows user the ability to sign in with their social accounts such as facebook
+* Voting buttons - Allows the users the ability to vote if they like the custom burger
 
  
 ## Database Structure
@@ -251,76 +269,92 @@ The website was tested on laptop, desktop, iphone, ipad on the following browser
 - Firefox 
 
 ### Manual Tests for functionality of features
-### 1. Navbar
--
--
-### 2. Footer
--
--
-### 3. Home page
--
--
-### 4. About Page
--
--
-### 5. Menu Page
--
--
-### 6. Product Details
--
--
-### 7. Shopping Cart
--
--
-### 8. Checkout Page
--
--
-### 9. User Profile Page
--
--
-### 10. Update Profile details
--
--
-### 11. User Order History
--
--
-### 12. Admin Product Page
--
--
-### 13. Owner Order Dashboard
--
--
-### 14. Owner Order Details/Status Update
--
--
-### 15. Create your own burger page.
--
--
-### 16. Django All Auth
--
--
-### 17. Sign Up
--
--
-### 18. Login
--
--
-### 19. Forgot password
--
--
-### 20. Logout
--
--
-### 21. Back to Top
--
--
-### 22. User Reviews
--
--
+### 1. Responsive on all devices 
+- Chrome Dev Tools was used to check the sites compatiability all all devices. 
+- A link to the site was tested on iphone and ipad.
+### 2. Home page
+- The homepage animations were tested to ensure that when the page loads and refreshed the welcome animations work, also the scroll animations were tested. 
+- The button links  on the homepage for Place Order, Our burgers, About us, our suppliers and reviews were all clicked and the appropriate page was loaded.
+### 3. Place Order 
+- The Place order button was clicked and the relevant page was returned. For non authenticated users they are directed to the login page authenticated users are directed to the place order view.
+- The close button was clicked and was returned to the homepage.
+### 4. Our Burgers
+- The view menu button in the our burger section was clicked and the menu page was returned.
+- The close button was clicked and was returned to the homepage.
+### 4. About Us
+- The about us button in the about us section was clicked and the relevant page was returned.
+- The create your own burger button was clicked and the custom burger page was returned.
+- The close button was clicked and was returned to the homepage.
+### 5. Our Suppliers
+- The our suppliers button in the Fresh ingredients section was clicked and the relavant page was returned.
+- The links to all suppliers was clicked and the homepage for theat company was returned in a new window. 
+- The close button was clicked and was returned to the homepage.
+### 6. User Reviews 
+- The reviews button in the Reviews section was clicked and the relavant page was returned.
+- Test reviews were added to the database and the review was displayed on the list of reviews. 
+- The review title was clicked and the review comments, rating, username and date was displayed as a dropdown.
+- The close button was clicked and was returned to the homepage.
+- The Add Review button was clicked and the form  to add a review was returned.  
+### 7. Add review
+- The add review form was completed and submitted and a review was posted to the database and displayed on the reviews section.
+### 8. Footer
+- The social links were all clicked to ensure that the relevant link opened in a new window.
+- The burger icon was clicked and the homepage was returned.
+### 9. Logo
+- The burger icon was clicked and the homepage was returned.
+### 10. Navbar
+- The Navbar links were all tested on the main navbar, the appropriate pages opened when clicked.
 
-## 23. Add review
--
--
+### 11. Menu
+- The Menu link was clicked and all the products were returned.
+- All cards were tested to ensure that when hovered or clicked that the product name, description, price and more info button are shown.
+- The cards were tested to ensure that when logged in as a superuser the edit and delete buttons are displayed, the edit and delete buttons were tested. 
+- The more info button was clicked and the product details were returned, this was tested as a non-authenticated user, as a authenticated user and a superuser. As a non-authenticated user returns the product info and a link to login or register, logged in as a authenticated user allows the user to select quantity and add to cart and as a super user edit and delete buttons are visible.
+
+### 12. Order
+- The Order link was clicked and the options for place order and build your own were available. 
+- The Place Order button was clicked as a non-authenticated user the login page is returned, as a authenticated user the order page is returned.
+- Items were added to the cart at different quantities to ensure they worked.
+### 13. Build your own
+- The Build your Own link in the navbar was clicked and the custom page was returned which displays all custom burgers that have been created by users.
+- The Create your own burger button was clicked this was tested as a non-authenticated user when clicked was redirected to the login page and for authenticated users the create your own form was returned.
+
+### 14. Create your own
+- Various Custom Burgers were created using the form, multiple ingredients were selected from the same category, custom name was inputted and the create burger button was clicked and the success message appears.
+- The quantity was tested and the created burger was then added to the cart. 
+
+### 15.(a) My Account - Non-authenticated
+- The register functionality was tested by creating various users, tested using the same email address or username as already created users to test that the error message works.
+- The signin functionality was tested by logging in with created users and tested using incoorect username and passwords.
+- The forgot password link on the login was tested to change the password of an existing user.  
+
+### 15.(b) Account - Authenticated
+- The logout link was tested to ensure that the logout page was returned.
+- The My Profile link was tested to ensure that the correct profile page and user information was returned.
+- The Update Profile button was clicked and the username, email address, delivery info and profile picture were changed and updated by completing the form and clicking the update button. 
+- clicking the order id in the order history in the profile page returns the order confirmation along with a message confirming this is an old order. 
+
+### 16. Checkout
+- The shopping cart link was clicked with items in and out the bag, when clicked with an empty cart the user is greeted with a screen confirming the cart is empty and a still hungry? button when clicked returned the Menu page.
+- When Items are added to cart a success message appears with confirmation of the product name added to the bag and a break down of items in the cart and a subtotal.
+- After Adding Items to cart the cart button was clicked which returns the shopping cart which shows the product image, name, price, quantity, subtotal, cart total, delivery costs, grand total, Still Hungry? button and secure checkout.
+- The quantity update and remove buttons were tested when items were increased or decreased and updated the subtotal changes to the correct ammount. When remove is clicked the item is removed from basket and the totals are updated.
+- The Secure Checkout button was clicked and the checkout page was loaded.   
+
+### 16. Checkout Page    
+- The checkout page was tested using stripes test card numbers to make purchase, which was successfully processed and order appeares in the database and order history, after completing payment a confirmation email was recieved with breakdown of order. 
+
+### 17. Admin
+- The admin link in the navbar only displays when logged in as a superuser this was tested by logging in as a regular user. 
+- The Add Product was tested by completing the form and adding new product to the database, this item was then searched for on the menu page and by using the filter options and the search bar.
+- Todays Orders Dashboard was tested by completing multiple orders through the secure checkout the total orders and the total revenue displayed the correct amount.  
+- The order update was tested by clicking on an order and changing the order status to all of the options and update them. When updated to delivered the orders were moved from active to completed.
+- The Order History was tested by searching for order id, name, email, status and order at and the relevant order/orders was returned.
+- Clicking on the reset returned all orders
+
+### 18. Back to Top
+- The back to top was tested on relevant pages and when clicked they page returns to the top.
+
 
 ## Testing User Stories
 
@@ -328,41 +362,78 @@ The website was tested on laptop, desktop, iphone, ipad on the following browser
 
 As a User....
 *  I expect to access the website from any device, so that I can use the website anytime and anywhere.
-    (a)  
-
-    (b)  
-    ![]()
+    (a)  The website has been developed to be mobile responsive and can be used accross multiple platforms.
 *  I expect to easily navigate the website, so that I can quickly find what I'm looking for.
+    (a)  The Navbar helps users navigate the site.
+    (b)  Close buttons allows usere the ability to go back to previous page.
+    ![]()
 *  I want to find an information about the company, to know what they do, what their main principles and ideas
+    (a)  The About us section gives the users some additional information about the company.
 *  I want to see the location of the LBK.
+    (a)  The Address of LBK can be found on the About us section.
 *  I want to be able to easily contact the owner/manager of the company, so that I can write an additional query or ask a question.
+    (a)  The User can click on the email icon in the social link to send emails to LBK
+    (b)  LBK telephone number can be found in the contact us section of the about us page.
+    (c)  The email address can be found on the confirmation email in case there is a problem.
 *  I want to view all available products.
+    (a)  The Menu page allows useres to see all products and can be filtered by category type
+    (b)  The Order page allows users to see a simplistic menu page of all products.
 *  I want to view product details (e.g. image, price, description, ingredients), so that I can make an informed decision before I buy.
+    (a)  The menu page gives the user brief information about the product.
+    (b)  The more info button takes users to the product details page where more information can be found.
+    (c)  The place order page gives the user simplistic but relevant information about the product.
 *  I want to search and filter the products easily, so that I can quickly find a specific product I am looking for.
+    (a)  The Menu page allows the users to search for keywords that are either in the name or in the description of the product.
+    (b)  The User can narrow down the product based on category type in the menu section.
 *  I want to view and modify my order in the cart before completing it, so that I can make last changes easily before proceeding to payment.
+    (a)  Users can update and remove items from their cart in the shopping cart screen.
+    (b)  Users can continue to shop if they have missed an item by using the still hungry button.
 *  I want to view a total price of my purchases and delivery cost, so that I will understand and see how much I will be charged.
+    (a)  The shopping cart and the checkout page clearly breakdown the cost by subtotal, order total, delivery costs and a grand total.
+    (b)  Underneath the payment section in the checkout it clearly states the total the card will be charged.
+    (c)  When adding items to cart the user is greeted with a success message which informs the user the cost excluding delivery.
+    (d) The Cart Icon in the Navbar shows the user the subtotal of their cart at all times.
 *  I expect to make payments by card in a safe and secure way, so that I won't be concerned about the safety of my card details and won't be charged incorrectly.
 *  I want to receive an email confirmation after checkout, so that I can make sure that payment was successfull.
-*  I want to receive an email confirmation that my product is on the way.
+    (a) on succesful completion the user recieves an order confirmation.
 
 
 ### New Users
 As a new user....
 * I want to create my own account, so that I can save, view and edit my profile details and view my order history.
+    (a)  The all auth allows users the ability to create an account using the register.
+    (b)  When logged in the user can view their account at all time by clicking my account and my profile.
+    (c)  The user can update their info and profile picture using the update profile button in my profile page.
+    (d)  The user can see all their orders on the profile page and by clicking the order id for more detail.
 
 ### Returning users
 As a returning user....
 *  I want to easily login anytime, so that I can get access to my saved profile details and make next purchase quicker.
+    (a)  The user can tick the remember me on the login page for easy access.
+    (b)  On completion of first order the user can tick to store their information to their profile page which will autofilled on next purchase.
+    (c)  The user can enter their information to their profile page which will be used as default against purchases.
 *  I want to reset my password if I forgot it, so that I can get access to my profile again.
+    (a)  The user can reset their password via the login section by clicking forgot password.
 *  I want to be able to change my password, so that I can create the stronger password (e.g.in case I published my old password somewhere) to protect my personal details.
-*  I want to be able to change my email or add the second email, so that I can have an easier access to the website's functionality and to gain more flexibility.
+    (a)  The user can reset their password via the login section by clicking forgot password.
+*  I want to be able to change my email.
+    (a) The user can update email address by accessing their profile page and clicking update profile.
+
  
 ### Website Owner(admin)
 As a Site owner....
 *  I want to secure admin interface avalable only for website admin, so that I can add, edit and remove products.
+    (a)  Superusers can access the stores admin page to access the database.
+    (b)  Superusers can add products throurgh the Admin section of the Navbar.
+    (c)  Superusers can edit and delete particular products through the menu page and/or the product details page.   
 *  I want to be able to view orders recieved  for that day and update the order status.
+    (a)  Superusers can see all orders for that day by using the Todays orders in the Admin section of the navbar.
 *  I want to be able to differentiate between active orders and completed orders for the day.
-*  I want to be able to view history of all orders recieved.   
+    (a)  The order dashboard is split into two tables the top for active the bottom for completed.
+    (b)  The order status in the dashboard confirms the status of the order.
+*  I want to be able to view history of all orders recieved.
+    (a)  Superusers can see the complete order history by clicking the Order History in the admin section of the navbar.
+      
  
 
     

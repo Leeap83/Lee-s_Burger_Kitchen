@@ -23,7 +23,13 @@
         </div>
         <div class="row user-review">
             <div class="col-12">
-                <p class="text-center">Below are customers experience of Lee's Burger Kitchen and the service they recieved.</p>
+                <p class="text-center">Below are customers experience of Lee's Burger Kitchen and the service they recieved. 
+                    We know we aren't perfect but your comments can help us improve, please leave us a review good or bad your 
+                    thoughts still matter. 
+                </p>
+                <div class="col-12 col-md-6 col-lg-6 offset-lg-5">
+                    <a href="{% url 'add_review' %}" class="btn btn-lg btn-secondary">Add Review</a>
+                </div>
                 {% for rev in reviews %}
                 <div id="accordion">
                     <div class="card">
@@ -47,9 +53,6 @@
                 </div>
                 {% endfor %}
             </div>
-        </div>
-        <div class="col-12 col-md-6 col-lg-6 offset-lg-5">
-            <a href="{% url 'add_review' %}" class="btn btn-lg btn-secondary">Add Review</a>
         </div>
     </div>
 </section>
