@@ -10,8 +10,14 @@
 {% endblock %}
 
 {% block content %}
+<div class="container-fluid bg-white">
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <a href="{% url 'home' %}" class="btn btn-lg m-2 btn-secondary" type="button">Close</a>
+    </div>
+</div>
 <div class="container-fluid mb-2 bg-white">
     <div class="row">
+        
         <div class="col-12 col-md-8 col-lg-8 offset-lg-2">
             <h2 class="text-black text-center sub-headlines">Nice One!</h2>
             <p class="text-black">Thank you for your order, your order details are below. 

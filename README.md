@@ -40,7 +40,7 @@ As a new user....
 As a returning user....
 *  I want to easily login anytime, so that I can get access to my saved profile details and make next purchase quicker.
 *  I want to reset my password if I forgot it, so that I can get access to my profile again.
-*  I want to be able to change my password, so that I can create the stronger password (e.g.in case I published my old password somewhere) to protect my personal details.
+*  I want to be able to change my password, so that I can create the stronger password to protect my personal details.
 *  I want to be able to change my email.
  
 ### Website Owner(admin)
@@ -81,7 +81,7 @@ The other images have been choosen to highlight the product in an appealing ligh
     
     
 ## Wireframes:
-The [LBK](docs/LBK.pdf) wireframes can be found here.
+The [LBK](documents/docs/LBK.pdf) wireframes can be found here.
  
 ------
 
@@ -90,43 +90,68 @@ The [LBK](docs/LBK.pdf) wireframes can be found here.
 ## Existing Features
 
 * Home page - The homepage welcomes users to the site with a hero image, text and place order button which indicaates the purpose of the site. further down the page the user can find sections about our burgers, about us, our ingredients, and reviews section. Each section contains, imagery relavant to the section, a brief but informtive narative about the section and a button to take user to that view. 
+<img src="https://i.imgur.com/3W6VGGz.jpg" alt="homepage" target="_blank" rel="noopener" width="850"> 
 * Our Burgers - Our Burgers gives a brief explanation about our burgers with a button to the menu page.
+<img src="https://i.imgur.com/nWGTiNC.jpg" alt="our-burgers" target="_blank" rel="noopener" width="850"> 
 * About Us - The about us page gives users a little story of who we are, why we are different, delivery info and costs and contact details.
+<img src="https://i.imgur.com/FFh8zpQ.jpg" alt="about-us" target="_blank" rel="noopener" width="850"> 
 * Our Suppliers - Our suppliers page gives users breif narrative about our ingredients and providers with links to their sites.
-* User Reviews - The reviews page has a brief narrative informing the users that these are customers reviews of LBK and displays the reviews in a accordian style list displaying review title and date of review the drop down reveals the review, rating, user name, and date. Users are encouraged to click and add review. 
+<img src="https://i.imgur.com/9pwKE4i.jpg" alt="suppliers" target="_blank" rel="noopener" width="850"> 
+* User Reviews - The reviews page has a brief narrative informing the users that these are customers reviews of LBK and displays the reviews in a accordian style list displaying review title and date of review the drop down reveals the review, rating, user name, and date. Users are encouraged to click and add review. <img src="https://i.imgur.com/EoTqYc8.jpg" alt="reviews" target="_blank" rel="noopener" width="850"> 
 * Add review - When users click to add a review they are asked to sign in or register if not already, the user name is displayed at the tom and they are asked to leave a title, select a rating from 1 to 5 and leave a comment.
+<img src="https://i.imgur.com/9lrJlGR.jpg" alt="add-a-review" target="_blank" rel="noopener" width="850"> 
 * Footer - The footer has links to social media accounts these are defaulted to the homepage of the social media platform as no accounts exist for LBK. Opening and closing times and a link to homepage are also included.
+<img src="https://i.imgur.com/eoigt5P.jpg" alt="Footer" target="_blank" rel="noopener" width="850"> 
 * Logo - The LBK logo is a subtle burger and initial logo which acts a link to the homepage.
-* Navbar - The Navbar allows users an easy navigation through the site for registered and non-registered users. Some navigational links have access only for authenticated users or superusers and is accessible on all pages, the Navbar links consist of Menu, Order, Admin, My Account and Checkout.
+* Navbar - The Navbar allows users an easy navigation through the site for registered and non-registered users. 
+<img src="https://i.imgur.com/3dW9eBq.jpg" alt="Navbar" target="_blank" rel="noopener" width="850"> 
+Some navigational links have access only for authenticated users or superusers and is accessible on all pages, the Navbar links consist of Menu, Order, Admin, My Account and Checkout.
+<img src="https://i.imgur.com/nbzSkel.jpg" alt="navbar-for-superuser" target="_blank" rel="noopener" width="850"> 
 
 ### Menu
 * Menu - Menu in the Navbar takes user to the products page, which displays all products in cards format. When the card image is clicked or hovered on the card displays the product name description and more info button for all users, for superusers edit and delete buttons are visible. Included on this page is a search functionality that allows users to search for products based on name and description. Users can filter products based on category type which returns all products in that category.  
-* Product Details - When user clicks on the more info the product details appear which displays name, price, category, ingredients and if sutible for vegetarians. Non authenticated users see an option to login or register to place order, authenticated users can add quantity and add to cart. Superusers also have button options to edit product details or delete product.
+<img src="https://i.imgur.com/iOdxeBP.jpg?1" alt="Menu-page" target="_blank" rel="noopener" width="850"> 
+* Product Details - When user clicks on the more info the product details appear which displays name, price, category, ingredients and if sutible for vegetarians. Non authenticated users see an option to login or register to place order, authenticated users can add quantity and add to cart. Superusers also have button options to edit product details or delete product. <img src="https://i.imgur.com/U38YDMv.jpg" alt="product-details" target="_blank" rel="noopener" width="850"> 
 
 ### Order
 * Order - Order in the navbar has a dropdown option that allows users the options to place an order, view customer burgers and create a custom burger.   
 * Place Order - Place order allows authenticated users to view a list of all products split by category, adjust the quantity and add to cart. 
+<img src="" alt="" target="_blank" rel="noopener" width="850"> 
 * Build your Own - Custom burgers view allows the users to view all customer burgers created by other users and to create their own.
+<img src="https://i.imgur.com/t78G6qH.jpg" alt="created-burgers" target="_blank" rel="noopener" width="850"> 
 * Create your own - Create your own view allows users to create their own brger and add to cart. The ingredients are split by category and the user can choose what they want in their burger as well as give it a creative name.
+<img src="https://i.imgur.com/JVBfAgA.jpg" alt="create-your-own-burger" target="_blank" rel="noopener" width="850"> 
 
 ### Checkout
 * Shopping Cart - The shopping cart displays the product details that have been added to the cart the user can see product image, name, price, quantity, subtotal, cart total, delivery costs and grand total. the user can continue shopping or checkout.
-* Checkout Page - The checkout page utilises Stripe to process user payments, this page has order summary, client details, delivery info and payment info. The Client details and delivery info are populated from the user profile if completed or if they have ticked the option to save delivery info on previous transactions. The payment info uses stripes standard layout of card number, expiry, cvc and also displays error notification regarding card details. Once user clicks secure checout the user is the greeted with a custom loading page followed by a order confirmation, containing order info, order details, delivery info and billing info and a email confirmation is sent to the email address provided.    
+<img src="https://i.imgur.com/QXzQ144.jpg" alt="cart" target="_blank" rel="noopener" width="850"> 
+* Checkout Page - The checkout page utilises Stripe to process user payments, this page has order summary, client details, delivery info and payment info. The Client details and delivery info are populated from the user profile if completed or if they have ticked the option to save delivery info on previous transactions. The payment info uses stripes standard layout of card number, expiry, cvc and also displays error notification regarding card details. Once user clicks secure checout the user is the greeted with a custom loading page followed by a order confirmation, containing order info, order details, delivery info and billing info and a email confirmation is sent to the email address provided.
+<img src="https://i.imgur.com/BJkywyO.jpg" alt="checkout" target="_blank" rel="noopener" width="850">     
 
 ### My Account
 * User Profile Page - The authenticated user profile page is accessed from My Account in the navbar, this displays the users profile name, profile picture, username, email, delivery info and order history, which the user cand click on to see the past order confirmtion details 
+<img src="https://i.imgur.com/JZzmVtv.jpg" alt="my-profile" target="_blank" rel="noopener" width="850"> 
 * Update Profile details - User can update their username, email, profile picture and delivery info. 
+<img src="https://i.imgur.com/YSV5W3u.jpg" alt="Update-profile" target="_blank" rel="noopener" width="850"> 
 * User Order History - The Order history gives a brief overview of the order order number, date, status, items and total. Users can click on order number to view the confirmation order.
+ 
 
 ### Admin
 * Admin - The admin section in the navbar allows store owners the ability to add products, see the orders for that day and all orders.
 * Add Product - The add product allows superusers the abillity to add new products via a form to the database by completing the relevant fields.
-* Todays Orders Dashboard - Todays orders shows the store owner a breakdown of total revenue and a count of how many orders have been recieved that day. Underneath this is two tables one for active orders and the other for completed orders. The tables display basic information about the order id, total, order at, name, email and status. When the row is clicked on the complete order details are displayed.  
+<img src="https://i.imgur.com/02umeQ7.jpg" alt="Add-product" target="_blank" rel="noopener" width="850"> 
+* Todays Orders Dashboard - Todays orders shows the store owner a breakdown of total revenue and a count of how many orders have been recieved that day. Underneath this is two tables one for active orders and the other for completed orders. The tables display basic information about the order id, total, order at, name, email and status. When the row is clicked on the complete order details are displayed.
+<img src="https://i.imgur.com/8Sp0i4T.jpg" alt="Todays-orders" target="_blank" rel="noopener" width="850">   
 * Order Details/Status Update - The order details display the order info and status which can be updated by store owner to order recieved (default), order cooking, out for delivery and delivered. When order is updated to delivered the order is moved from the active table in the order dashboard to completed.
+<img src="https://i.imgur.com/nCuPW86.jpg" alt="order-details" target="_blank" rel="noopener" width="850"> 
 * Order History - The Order history allows the store owner the ability to see all orders and has the ability to serach all orders for the name, id, email, status and ordered on that way if a custome complains the owner can search his order and pull up the order information.
-* Django All Auth
+<img src="https://i.imgur.com/z37vnXk.jpg" alt="all-orders" target="_blank" rel="noopener" width="850"> 
+
+### Django All Auth
 * Sign Up - The sign up allows new users to register and create a profile by completing the registration form.
+<img src=" https://i.imgur.com/njjW3Nn.jpg" alt="sign_up" target="_blank" rel="noopener" width="850"> 
 * Login - Allows registered users the ability to sign in. 
+<img src="https://i.imgur.com/twKmNXL.jpg" alt="login" target="_blank" rel="noopener" width="850"> 
 * Forgot Password - Allows users the ability to reset their password.
 * Logout - Allows the users to logout.
 * Back to Top - Features on the right hand side of the screen and allows the users the ability to return back to top of the screen.
@@ -137,25 +162,109 @@ The [LBK](docs/LBK.pdf) wireframes can be found here.
 * Social Account Login feature - Allows user the ability to sign in with their social accounts such as facebook
 * Voting buttons - Allows the users the ability to vote if they like the custom burger
 
- 
-## Database Structure
+------
+# Database Structure
+
+**Sqlite3** database was used during the developmental phase which wass installed with Django. **PostgreSQL** database was used when deployed to Heroku.
+
+## Data Models
+### Profiles App
+#### UserProfile
+| **Name** | **Database Key** | **Field Type** | **Validation** |
+--- | --- | --- | --- 
+User | user | OneToOneField(User) | on_delete=models.CASCADE
+Image | image | ImageField | default='default.jpg', upload_to='profile_pics'
+Phone Number | default_phone_number | CharField | max_length=20, null=True, blank=True
+Street | default_street | CharField | max_length=80, null=True, blank=True
+Town or City | default_town_or_city | CharField | max_length=40, null=True, blank=True
+County | default_county | CharField | max_length=80, null=True, blank=True
+Postcode | default_postcode | CharField | max_length=20, null=True, blank=True
+
+### Products App
+#### Category
+| **Name** | **Database Key** | **Field Type** | **Validation** |
+--- | --- | --- | --- 
+Category Name | name | CharField | max_length=254
+Friendly Name | friendly_name | CharField | max_length=254, null=True, blank=True
+
+#### Product
+| **Name** | **Database Key** | **Field Type** | **Validation** |
+--- | --- | --- | --- 
+Category | category | ForeignKey('Category') | null=True, blank=True, on_delete=models.SET_NULL
+Name | name | CharField | max_length=254
+Description | description | TextField |
+Price | price | DecimalField | max_digits=6, decimal_places=2, null=True, blank=True
+Image URL | image_url | URLField | max_length=1024, null=True, blank=True
+Image | image | ImageField | null=True, blank=True
+Vegetarian | vegetarian | BooleanField |
+Ingredients | ingredients | ManyToManyField('Ingredients') | related_name='ingredients', blank=True
+Custom | custom | BooleanField | default=False
 
 
-1. Profile
-- User Profiles
+#### Ingredients
+| **Name** | **Database Key** | **Field Type** | **Validation** |
+--- | --- | --- | --- 
+Name | name | CharField | max_length=30
+Category | cat | CharField | max_length=100, null=True, blank=True
 
-2. Products 
-- Categorys
-- Custom_burgers
-- Ingredients
-- Products
 
-3. Customers
-- Reviews
+#### Custom_Burger
+| **Name** | **Database Key** | **Field Type** | **Validation** |
+--- | --- | --- | --- 
+Custom Name | custom_name | CharField | max_length=254
+Buns | buns | ManyToManyField('Ingredients') | related_name='buns', blank=True
+Burgers | burger | ManyToManyField('Ingredients') | related_name='burger', blank=True
+Sauce | sauce | ManyToManyField('Ingredients') | related_name='sauce', blank=True
+Salads | salads | ManyToManyField('Ingredients') | related_name='salads', blank=True
+Cheese | cheese | ManyToManyField('Ingredients') | related_name='cheese', blank=True
+Extras | extras | ManyToManyField('Ingredients') | related_name='extras', blank=True
+Category | category | ForeignKey('Category') | null=True, blank=True, on_delete=models.CASCADE, related_name='custom_burger'
+Price | price | DecimalField | max_digits=6, decimal_places=2, default='10.99', editable=False
 
-4. Checkout
-- Orders
+### Customer App
+#### Review
+| **Name** | **Database Key** | **Field Type** | **Validation** |
+--- | --- | --- | --- 
+User | user | ForeignKey(User) | on_delete=models.CASCADE
+Date | date | DateTimeField | auto_now_add=True
+Review Title | title | TextField | max_length=500, blank=True, null=True
+Review Comment | comment | TextField | max_length=2500, blank=True, null=True
+Rating | rate | PositiveSmallIntegerField | choices=RATING_CHOICES
 
+RATING_CHOICES =  (1, '1 - Awful'), (2, '2 - Could be Better'), (3, '3 - OK'), (4, '4 - Good'), (5, '5 - Amazing'),
+
+### Checkout
+#### Order
+| **Name** | **Database Key** | **Field Type** | **Validation** |
+--- | --- | --- | --- 
+Created On | created_on | DateTimeField | auto_now_add=True
+Order Id | order_id | CharField | max_length=32, null=False, editable=False
+User Profile | user_profile | ForeignKey(UserProfile) | on_delete=models.SET_NULL, null=True, blank=True, related_name='orders')
+Name | name | CharField | max_length=50, blank=False
+Email |email | EmailField | max_length=250, null=False, blank=False
+Phone Number| phone_number | CharField | max_length=20, null=False, blank=False
+Street | street | CharField | max_length=80, null=False, blank=False
+Town or City | town_or_city | CharField | max_length=50, null=False, blank=False
+Postcode | postcode | CharField | max_length=20, null=False, blank=False
+County | county | CharField | max_length=80, blank=True
+Delivery Costs | delivery_cost | DecimalField | max_digits=6, decimal_places=2, null=False, default=0
+Order Total | order_total | DecimalField | max_digits=10, decimal_places=2, null=False, default=0
+Grand Total | grand_total | DecimalField | max_digits=10, decimal_places=2, null=False, default=0
+Order Status | order_status | CharField | max_length=100, choices=CHOICES, default='Order Recieved'
+Original Cart | original_cart | TextField | null=False, blank=False, default=''
+Stripe Pid | stripe_pid | CharField | max_length=254, null=False, blank=False, default=''
+
+CHOICES = [('Order Recieved', 'Order Recieved'), ('Cooking', 'Cooking'), ('Out for delivery', 'Out for Delivery'), ('Order Delivered', 'Order Delivered'),
+
+#### OrderLineItem
+| **Name** | **Database Key** | **Field Type** | **Validation** |
+--- | --- | --- | --- 
+Order| order | ForeignKey(Order) | null=False, blank=False, on_delete=models.CASCADE, related_name='lineitems'
+Product | product | ForeignKey(Product) | null=False, blank=False, on_delete=models.CASCADE
+Quantity | quantity | IntegerField | null=False, blank=False, default=0
+Item Total | lineitem_total | DecimalField | max_digits=6, decimal_places=2, null=False, blank=False, editable=False
+
+------
 
 # Technologies Used
  
@@ -246,6 +355,8 @@ The [LBK](docs/LBK.pdf) wireframes can be found here.
 [PostgresSQL](https://www.postgresql.org/):
  Postgres SQL was used as the relational database after to deploying to Heroku.
 
+------
+
 # Testing
 ### Code Validation
 The Freeformatter HTML Validator and W3C CSS Validator were used to validate every page of the project to ensure there were no errors in the project.
@@ -315,6 +426,7 @@ The website was tested on laptop, desktop, iphone, ipad on the following browser
 - The Order link was clicked and the options for place order and build your own were available. 
 - The Place Order button was clicked as a non-authenticated user the login page is returned, as a authenticated user the order page is returned.
 - Items were added to the cart at different quantities to ensure they worked.
+- Using the minus button on the quantity it was tested to ensure that user can't enter an amount below zero, typing zero in the field returned a warning you must enter a value equal or greater to 1. 
 ### 13. Build your own
 - The Build your Own link in the navbar was clicked and the custom page was returned which displays all custom burgers that have been created by users.
 - The Create your own burger button was clicked this was tested as a non-authenticated user when clicked was redirected to the login page and for authenticated users the create your own form was returned.
@@ -342,7 +454,8 @@ The website was tested on laptop, desktop, iphone, ipad on the following browser
 - The Secure Checkout button was clicked and the checkout page was loaded.   
 
 ### 16. Checkout Page    
-- The checkout page was tested using stripes test card numbers to make purchase, which was successfully processed and order appeares in the database and order history, after completing payment a confirmation email was recieved with breakdown of order. 
+- The checkout page was tested using stripes test card numbers to make purchase, which was successfully processed and order appeares in the database and order history, after completing payment a confirmation email was recieved with breakdown of order.
+- Incorrect card details was tested to ensure that the user is presented with a warning advising of incorect details.
 
 ### 17. Admin
 - The admin link in the navbar only displays when logged in as a superuser this was tested by logging in as a regular user. 
@@ -361,77 +474,78 @@ The website was tested on laptop, desktop, iphone, ipad on the following browser
 **External User Goals:**
 
 As a User....
-*  I expect to access the website from any device, so that I can use the website anytime and anywhere.
+*  I expect to access the website from any device, so that I can use the website anytime and anywhere.  
     (a)  The website has been developed to be mobile responsive and can be used accross multiple platforms.
-*  I expect to easily navigate the website, so that I can quickly find what I'm looking for.
-    (a)  The Navbar helps users navigate the site.
+
+*  I expect to easily navigate the website, so that I can quickly find what I'm looking for.  
+    (a)  The Navbar helps users navigate the site.   
     (b)  Close buttons allows usere the ability to go back to previous page.
     ![]()
-*  I want to find an information about the company, to know what they do, what their main principles and ideas
+*  I want to find an information about the company, to know what they do, what their main principles and ideas.  
     (a)  The About us section gives the users some additional information about the company.
-*  I want to see the location of the LBK.
+*  I want to see the location of the LBK.  
     (a)  The Address of LBK can be found on the About us section.
-*  I want to be able to easily contact the owner/manager of the company, so that I can write an additional query or ask a question.
-    (a)  The User can click on the email icon in the social link to send emails to LBK
-    (b)  LBK telephone number can be found in the contact us section of the about us page.
+*  I want to be able to easily contact the owner/manager of the company, so that I can write an additional query or ask a question.  
+    (a)  The User can click on the email icon in the social link to send emails to LBK.  
+    (b)  LBK telephone number can be found in the contact us section of the about us page.  
     (c)  The email address can be found on the confirmation email in case there is a problem.
-*  I want to view all available products.
-    (a)  The Menu page allows useres to see all products and can be filtered by category type
+*  I want to view all available products.  
+    (a)  The Menu page allows useres to see all products and can be filtered by category type.  
     (b)  The Order page allows users to see a simplistic menu page of all products.
-*  I want to view product details (e.g. image, price, description, ingredients), so that I can make an informed decision before I buy.
-    (a)  The menu page gives the user brief information about the product.
-    (b)  The more info button takes users to the product details page where more information can be found.
+*  I want to view product details (e.g. image, price, description, ingredients), so that I can make an informed decision before I buy.  
+    (a)  The menu page gives the user brief information about the product.  
+    (b)  The more info button takes users to the product details page where more information can be found.  
     (c)  The place order page gives the user simplistic but relevant information about the product.
-*  I want to search and filter the products easily, so that I can quickly find a specific product I am looking for.
-    (a)  The Menu page allows the users to search for keywords that are either in the name or in the description of the product.
+*  I want to search and filter the products easily, so that I can quickly find a specific product I am looking for.  
+    (a)  The Menu page allows the users to search for keywords that are either in the name or in the description of the product.  
     (b)  The User can narrow down the product based on category type in the menu section.
-*  I want to view and modify my order in the cart before completing it, so that I can make last changes easily before proceeding to payment.
-    (a)  Users can update and remove items from their cart in the shopping cart screen.
+*  I want to view and modify my order in the cart before completing it, so that I can make last changes easily before proceeding to payment.  
+    (a)  Users can update and remove items from their cart in the shopping cart screen.  
     (b)  Users can continue to shop if they have missed an item by using the still hungry button.
-*  I want to view a total price of my purchases and delivery cost, so that I will understand and see how much I will be charged.
-    (a)  The shopping cart and the checkout page clearly breakdown the cost by subtotal, order total, delivery costs and a grand total.
-    (b)  Underneath the payment section in the checkout it clearly states the total the card will be charged.
-    (c)  When adding items to cart the user is greeted with a success message which informs the user the cost excluding delivery.
+*  I want to view a total price of my purchases and delivery cost, so that I will understand and see how much I will be charged.  
+    (a)  The shopping cart and the checkout page clearly breakdown the cost by subtotal, order total, delivery costs and a grand total.  
+    (b)  Underneath the payment section in the checkout it clearly states the total the card will be charged.  
+    (c)  When adding items to cart the user is greeted with a success message which informs the user the cost excluding delivery.  
     (d) The Cart Icon in the Navbar shows the user the subtotal of their cart at all times.
 *  I expect to make payments by card in a safe and secure way, so that I won't be concerned about the safety of my card details and won't be charged incorrectly.
-*  I want to receive an email confirmation after checkout, so that I can make sure that payment was successfull.
+*  I want to receive an email confirmation after checkout, so that I can make sure that payment was successfull.  
     (a) on succesful completion the user recieves an order confirmation.
 
 
 ### New Users
 As a new user....
-* I want to create my own account, so that I can save, view and edit my profile details and view my order history.
-    (a)  The all auth allows users the ability to create an account using the register.
-    (b)  When logged in the user can view their account at all time by clicking my account and my profile.
-    (c)  The user can update their info and profile picture using the update profile button in my profile page.
+* I want to create my own account, so that I can save, view and edit my profile details and view my order history.  
+    (a)  The all auth allows users the ability to create an account using the register.  
+    (b)  When logged in the user can view their account at all time by clicking my account and my profile.  
+    (c)  The user can update their info and profile picture using the update profile button in my profile page.  
     (d)  The user can see all their orders on the profile page and by clicking the order id for more detail.
 
 ### Returning users
 As a returning user....
-*  I want to easily login anytime, so that I can get access to my saved profile details and make next purchase quicker.
-    (a)  The user can tick the remember me on the login page for easy access.
-    (b)  On completion of first order the user can tick to store their information to their profile page which will autofilled on next purchase.
+*  I want to easily login anytime, so that I can get access to my saved profile details and make next purchase quicker.  
+    (a)  The user can tick the remember me on the login page for easy access.  
+    (b)  On completion of first order the user can tick to store their information to their profile page which will autofilled on next purchase.  
     (c)  The user can enter their information to their profile page which will be used as default against purchases.
-*  I want to reset my password if I forgot it, so that I can get access to my profile again.
+*  I want to reset my password if I forgot it, so that I can get access to my profile again.  
     (a)  The user can reset their password via the login section by clicking forgot password.
-*  I want to be able to change my password, so that I can create the stronger password (e.g.in case I published my old password somewhere) to protect my personal details.
+*  I want to be able to change my password, so that I can create the stronger password to protect my personal details.  
     (a)  The user can reset their password via the login section by clicking forgot password.
-*  I want to be able to change my email.
+*  I want to be able to change my email.  
     (a) The user can update email address by accessing their profile page and clicking update profile.
 
  
 ### Website Owner(admin)
 As a Site owner....
-*  I want to secure admin interface avalable only for website admin, so that I can add, edit and remove products.
-    (a)  Superusers can access the stores admin page to access the database.
-    (b)  Superusers can add products throurgh the Admin section of the Navbar.
+*  I want to secure admin interface avalable only for website admin, so that I can add, edit and remove products.  
+    (a)  Superusers can access the stores admin page to access the database.  
+    (b)  Superusers can add products throurgh the Admin section of the Navbar.  
     (c)  Superusers can edit and delete particular products through the menu page and/or the product details page.   
-*  I want to be able to view orders recieved  for that day and update the order status.
+*  I want to be able to view orders recieved  for that day and update the order status.  
     (a)  Superusers can see all orders for that day by using the Todays orders in the Admin section of the navbar.
-*  I want to be able to differentiate between active orders and completed orders for the day.
-    (a)  The order dashboard is split into two tables the top for active the bottom for completed.
+*  I want to be able to differentiate between active orders and completed orders for the day.  
+    (a)  The order dashboard is split into two tables the top for active the bottom for completed.  
     (b)  The order status in the dashboard confirms the status of the order.
-*  I want to be able to view history of all orders recieved.
+*  I want to be able to view history of all orders recieved.  
     (a)  Superusers can see the complete order history by clicking the Order History in the admin section of the navbar.
       
  
@@ -440,11 +554,11 @@ As a Site owner....
 ## Bugs
 - After deploying to Heroku Menu image links were broken as the file url wasn't included in the media folder upload. These were added in the admin section.
 
-- After deploying a Server Error 500 message appeared after confirming payment in the checkout app. Debug was turned back on to True to discover where the issue was ![error](static/images/error.png). This error was due to the order_id in the models.py having a max-length of 28 when the UUID is 32 characters. This issue was corrected and migrations where ran but the error still occured. After contacting Tutor support it was highlighted that there were existing orders in the developembntal database that was causing this error. These orders were deleted from the admin section, the postgress database was reset and the data was dumped into jason.db and reimported.
+- After deploying a Server Error 500 message appeared after confirming payment in the checkout app. Debug was turned back on to True to discover where the issue was ![error](documents/images/error.png). This error was due to the order_id in the models.py having a max-length of 28 when the UUID is 32 characters. This issue was corrected and migrations where ran but the error still occured. After contacting Tutor support it was highlighted that there were existing orders in the developembntal database that was causing this error. These orders were deleted from the admin section, the postgress database was reset and the data was dumped into jason.db and reimported.
 
 - After creating the Custom_burger cfreator an integrity Error occured on the Heroku app when clicking the create burger button. This error was resolved by adding a price field in the Custom_burger model and giving it a default value.
 
-
+------
 # Deployment 
 
 Lees Burger Kitchen was developed using [GitPod](https://www.gitpod.io/) using Git & GitHub for version control. 
@@ -537,7 +651,7 @@ the env.py file:
 
 8. The site is now successfully deployed, click the "Open app" button to visit it.
 
-
+------
 
 # Credits
 
