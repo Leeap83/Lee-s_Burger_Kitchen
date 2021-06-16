@@ -672,6 +672,22 @@ th {
 .custom-checkbox label {
     font-weight: normal;
 }
+
+form {
+    padding: 20px;
+}
+
+.form-control {
+    font-size: 1.5rem;
+}
+
+.card {
+
+    background: #fff;
+    margin: 30px 10px;
+    padding: 20px 15px;
+}
+
 /* Media Queries */
 @media (max-width: 991px) {
 
@@ -724,21 +740,6 @@ th {
     .btt-button a i {
         font-size: 1rem;
     }
-}
-
-form {
-    padding: 20px;
-}
-
-.form-control {
-    font-size: 1.5rem;
-}
-
-.card {
-
-    background: #fff;
-    margin: 30px 10px;
-    padding: 20px 15px;
 }
 
 /* Animations */
