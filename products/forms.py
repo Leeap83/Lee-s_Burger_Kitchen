@@ -40,12 +40,18 @@ class CustomForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['buns'].queryset = Ingredients.objects.filter(cat='Bun')
-        self.fields['burger'].queryset = Ingredients.objects.filter(cat='Burger')
-        self.fields['sauce'].queryset = Ingredients.objects.filter(cat='Sauce')
-        self.fields['salads'].queryset = Ingredients.objects.filter(cat='Salad')
-        self.fields['cheese'].queryset = Ingredients.objects.filter(cat='Cheese')
-        self.fields['extras'].queryset = Ingredients.objects.filter(cat='Extras')
+        self.fields['buns'].queryset = (
+            Ingredients.objects.filter(cat='Bun'))
+        self.fields['burger'].queryset = (
+            Ingredients.objects.filter(cat='Burger'))
+        self.fields['sauce'].queryset = (
+            Ingredients.objects.filter(cat='Sauce'))
+        self.fields['salads'].queryset = (
+            Ingredients.objects.filter(cat='Salad'))
+        self.fields['cheese'].queryset = (
+            Ingredients.objects.filter(cat='Cheese'))
+        self.fields['extras'].queryset = (
+            Ingredients.objects.filter(cat='Extras'))
         self.helper = FormHelper()
         self.helper.form_method = 'post'
 

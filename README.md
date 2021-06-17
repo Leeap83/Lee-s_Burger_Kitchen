@@ -408,15 +408,20 @@ Item Total | lineitem_total | DecimalField | max_digits=6, decimal_places=2, nul
 ### Code Validation
 The Freeformatter HTML Validator and W3C CSS Validator were used to validate every page of the project to ensure there were no errors in the project.
 
-[CSS Validator](http://jigsaw.w3.org/css-validator/) - [Results]()
+### CSS
+All CSS files were tested using [CSS Validator](http://jigsaw.w3.org/css-validator/) code passed validation [Results](documents/docs/css-results.pdf).
 
-[HTML Validator](https://validator.w3.org/) - [Results](docs/) the results show a warning "lack of heading for section", the section displays 
-the flash messages that displays success/error messages when user logs in, adds/removes files.
+### HTML
+All the HTML files were tested through [HTML Validator](https://validator.w3.org/). A number of errors showed but this was becuase the validator does not recognize Jinja2 templating language. There were also few minor errors regarding target="_blank" on some images on the index page which was removed from the code. Apart from that, no other errors were found across the html pages.
 
-[JSHint](https://jshint.com/) - [Results](docs/)
+### Javascript
+All the JS files and scripts were tested through [JSHint](https://jshint.com/), minor errors where semi colons were missing was highlighted and rectified.
 
-Lighthouse was used on Google Chrome to help improve perfomance and accessability. This helped improve the contrast issue with background
-and foreground colours - [Results](documents/docs/lighthouse-results.pdf)
+### Python
+The code was constantly checked to ensure it was PEP8 compliant where possible. The command "python3 -m flake8" was used to run through the list of any problems. There are a some lines of code that are too long these are in webhooks, settings and migrations which have been left. 
+
+### Lighthouse
+Lighthouse was used from Google Chrome Dev Tools to help improve perfomance and accessability. Audits were carried out on all pages [Results](documents/docs/lighthouse-results.pdf).
 
 
 ### Devices
