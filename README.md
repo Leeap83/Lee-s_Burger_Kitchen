@@ -1,6 +1,6 @@
 # MSP4 Lee's Burger Kitchen (LBK)
 
-![Screenshot](static/images/)
+![Screenshot](documents/images/screenshot.png)
 
 This is the Website for [Lee's Burger Kitchen(LBK)](). Which is an online burger delivery site. 
 
@@ -88,78 +88,126 @@ The [LBK](documents/docs/LBK.pdf) wireframes can be found here.
 
 ## Existing Features
 
-* Home page - The homepage welcomes users to the site with a hero image, text and place order button which indicaates the purpose of the site. further down the page the user can find sections about our burgers, about us, our ingredients, and reviews section. Each section contains, imagery relavant to the section, a brief but informtive narative about the section and a button to take user to that view. 
-<img src="https://i.imgur.com/3W6VGGz.jpg" alt="homepage" target="_blank" rel="noopener" width="850"> 
-* Our Burgers - Our Burgers gives a brief explanation about our burgers with a button to the menu page.
+### Home page 
+- The homepage welcomes users to the site with a hero image, text and place order button which indicaates the purpose of the site. further down the page the user can find sections about our burgers, about us, our ingredients, and reviews section. Each section contains, imagery relavant to the section, a brief but informtive narative about the section and a button to take user to that view. 
+<img src="https://i.imgur.com/3W6VGGz.jpg" alt="homepage" target="_blank" rel="noopener" width="850">
+
+#### Our Burgers
+ - Our Burgers gives a brief explanation about our burgers with a button to the menu page.
 <img src="https://i.imgur.com/nWGTiNC.jpg" alt="our-burgers" target="_blank" rel="noopener" width="850"> 
-* About Us - The about us page gives users a little story of who we are, why we are different, delivery info and costs and contact details.
+
+#### About Us
+ - The about us page gives users a little story of who we are, why we are different, delivery info and costs and contact details.
 <img src="https://i.imgur.com/FFh8zpQ.jpg" alt="about-us" target="_blank" rel="noopener" width="850"> 
-* Our Suppliers - Our suppliers page gives users breif narrative about our ingredients and providers with links to their sites.
+
+#### Our Suppliers 
+- Our suppliers page gives users breif narrative about our ingredients and providers with links to their sites.
 <img src="https://i.imgur.com/9pwKE4i.jpg" alt="suppliers" target="_blank" rel="noopener" width="850"> 
-* User Reviews - The reviews page has a brief narrative informing the users that these are customers reviews of LBK and displays the reviews in a accordian style list displaying review title and date of review the drop down reveals the review, rating, user name, and date. Users are encouraged to click and add review. <img src="https://i.imgur.com/EoTqYc8.jpg" alt="reviews" target="_blank" rel="noopener" width="850"> 
-* Add review - When users click to add a review they are asked to sign in or register if not already, the user name is displayed at the tom and they are asked to leave a title, select a rating from 1 to 5 and leave a comment.
+
+#### User Reviews 
+- The reviews page has a brief narrative informing the users that these are customers reviews of LBK and displays the reviews in a accordian style list displaying review title and date of review the drop down reveals the review, rating, user name, and date. Users are encouraged to click and add review. <img src="https://i.imgur.com/EoTqYc8.jpg" alt="reviews" target="_blank" rel="noopener" width="850"> 
+
+#### Add review 
+- When users click to add a review they are asked to sign in or register if not already, the user name is displayed at the tom and they are asked to leave a title, select a rating from 1 to 5 and leave a comment.
 <img src="https://i.imgur.com/9lrJlGR.jpg" alt="add-a-review" target="_blank" rel="noopener" width="850"> 
-* Footer - The footer has links to social media accounts these are defaulted to the homepage of the social media platform as no accounts exist for LBK. Opening and closing times and a link to homepage are also included.
+
+### Footer 
+- The footer has links to social media accounts these are defaulted to the homepage of the social media platform as no accounts exist for LBK. Opening and closing times and a link to homepage are also included.
 <img src="https://i.imgur.com/eoigt5P.jpg" alt="Footer" target="_blank" rel="noopener" width="850"> 
-* Logo - The LBK logo is a subtle burger and initial logo which acts a link to the homepage.
-* Navbar - The Navbar allows users an easy navigation through the site for registered and non-registered users. 
+
+### Logo 
+- The LBK logo is a subtle burger and initial logo which acts a link to the homepage.
+
+### Navbar 
+- The Navbar allows users an easy navigation through the site for registered and non-registered users. 
 <img src="https://i.imgur.com/3dW9eBq.jpg" alt="Navbar" target="_blank" rel="noopener" width="850"> 
 Some navigational links have access only for authenticated users or superusers and is accessible on all pages, the Navbar links consist of Menu, Order, Admin, My Account and Checkout.
 <img src="https://i.imgur.com/nbzSkel.jpg" alt="navbar-for-superuser" target="_blank" rel="noopener" width="850"> 
 
-### Menu
-* Menu - Menu in the Navbar takes user to the products page, which displays all products in cards format. When the card image is clicked or hovered on the card displays the product name description and more info button for all users, for superusers edit and delete buttons are visible. Included on this page is a search functionality that allows users to search for products based on name and description. Users can filter products based on category type which returns all products in that category.  
+#### Menu
+- Menu in the Navbar takes user to the products page, which displays all products in cards format. When the card image is clicked or hovered on the card displays the product name description and more info button for all users, for superusers edit and delete buttons are visible. Included on this page is a search functionality that allows users to search for products based on name and description. Users can filter products based on category type which returns all products in that category.  
 <img src="https://i.imgur.com/iOdxeBP.jpg?1" alt="Menu-page" target="_blank" rel="noopener" width="850"> 
-* Product Details - When user clicks on the more info the product details appear which displays name, price, category, ingredients and if sutible for vegetarians. Non authenticated users see an option to login or register to place order, authenticated users can add quantity and add to cart. Superusers also have button options to edit product details or delete product. <img src="https://i.imgur.com/U38YDMv.jpg" alt="product-details" target="_blank" rel="noopener" width="850"> 
 
-### Order
-* Order - Order in the navbar has a dropdown option that allows users the options to place an order, view customer burgers and create a custom burger.   
-* Place Order - Place order allows authenticated users to view a list of all products split by category, adjust the quantity and add to cart. 
+#### Product Details 
+- When user clicks on the more info the product details appear which displays name, price, category, ingredients and if sutible for vegetarians. Non authenticated users see an option to login or register to place order, authenticated users can add quantity and add to cart. Superusers also have button options to edit product details or delete product. <img src="https://i.imgur.com/U38YDMv.jpg" alt="product-details" target="_blank" rel="noopener" width="850"> 
+
+#### Order
+- Order in the navbar has a dropdown option that allows users the options to place an order, view customer burgers and create a custom burger.   
+
+#### Place Order 
+- Place order allows authenticated users to view a list of all products split by category, adjust the quantity and add to cart. 
 <img src="" alt="" target="_blank" rel="noopener" width="850"> 
 * Build your Own - Custom burgers view allows the users to view all customer burgers created by other users and to create their own.
 <img src="https://i.imgur.com/t78G6qH.jpg" alt="created-burgers" target="_blank" rel="noopener" width="850"> 
-* Create your own - Create your own view allows users to create their own brger and add to cart. The ingredients are split by category and the user can choose what they want in their burger as well as give it a creative name.
+
+#### Create your own 
+- Create your own view allows users to create their own brger and add to cart. The ingredients are split by category and the user can choose what they want in their burger as well as give it a creative name.
 <img src="https://i.imgur.com/JVBfAgA.jpg" alt="create-your-own-burger" target="_blank" rel="noopener" width="850"> 
 
-### Checkout
-* Shopping Cart - The shopping cart displays the product details that have been added to the cart the user can see product image, name, price, quantity, subtotal, cart total, delivery costs and grand total. the user can continue shopping or checkout.
+#### Cart
+- The shopping cart displays the product details that have been added to the cart the user can see product image, name, price, quantity, subtotal, cart total, delivery costs and grand total. the user can continue shopping or checkout.
 <img src="https://i.imgur.com/QXzQ144.jpg" alt="cart" target="_blank" rel="noopener" width="850"> 
-* Checkout Page - The checkout page utilises Stripe to process user payments, this page has order summary, client details, delivery info and payment info. The Client details and delivery info are populated from the user profile if completed or if they have ticked the option to save delivery info on previous transactions. The payment info uses stripes standard layout of card number, expiry, cvc and also displays error notification regarding card details. Once user clicks secure checout the user is the greeted with a custom loading page followed by a order confirmation, containing order info, order details, delivery info and billing info and a email confirmation is sent to the email address provided.
+
+#### Checkout Page 
+- The checkout page utilises Stripe to process user payments, this page has order summary, client details, delivery info and payment info. The Client details and delivery info are populated from the user profile if completed or if they have ticked the option to save delivery info on previous transactions. The payment info uses stripes standard layout of card number, expiry, cvc and also displays error notification regarding card details. Once user clicks secure checout the user is the greeted with a custom loading page followed by a order confirmation, containing order info, order details, delivery info and billing info and a email confirmation is sent to the email address provided.
 <img src="https://i.imgur.com/BJkywyO.jpg" alt="checkout" target="_blank" rel="noopener" width="850">     
 
 ### My Account
-* User Profile Page - The authenticated user profile page is accessed from My Account in the navbar, this displays the users profile name, profile picture, username, email, delivery info and order history, which the user cand click on to see the past order confirmtion details 
-<img src="https://i.imgur.com/JZzmVtv.jpg" alt="my-profile" target="_blank" rel="noopener" width="850"> 
-* Update Profile details - User can update their username, email, profile picture and delivery info. 
+#### Profile Page 
+- The authenticated user profile page is accessed from My Account in the navbar, this displays the users profile name, profile picture, username, email, delivery info and order history, which the user cand click on to see the past order confirmtion details 
+<img src="https://i.imgur.com/JZzmVtv.jpg" alt="my-profile" target="_blank" rel="noopener" width="850">
+
+#### Update Profile details 
+- User can update their username, email, profile picture and delivery info. 
 <img src="https://i.imgur.com/YSV5W3u.jpg" alt="Update-profile" target="_blank" rel="noopener" width="850"> 
-* User Order History - The Order history gives a brief overview of the order order number, date, status, items and total. Users can click on order number to view the confirmation order.
+
+#### Order History 
+- The Order history gives a brief overview of the order order number, date, status, items and total. Users can click on order number to view the confirmation order.
  
 
 ### Admin
-* Admin - The admin section in the navbar allows store owners the ability to add products, see the orders for that day and all orders.
-* Add Product - The add product allows superusers the abillity to add new products via a form to the database by completing the relevant fields.
+- The admin section in the navbar allows store owners the ability to add products, see the orders for that day and all orders.
+
+#### Add Product
+- The add product allows superusers the abillity to add new products via a form to the database by completing the relevant fields.
 <img src="https://i.imgur.com/02umeQ7.jpg" alt="Add-product" target="_blank" rel="noopener" width="850"> 
-* Todays Orders Dashboard - Todays orders shows the store owner a breakdown of total revenue and a count of how many orders have been recieved that day. Underneath this is two tables one for active orders and the other for completed orders. The tables display basic information about the order id, total, order at, name, email and status. When the row is clicked on the complete order details are displayed.
+
+#### Todays Orders Dashboard 
+- Todays orders shows the store owner a breakdown of total revenue and a count of how many orders have been recieved that day. Underneath this is two tables one for active orders and the other for completed orders. The tables display basic information about the order id, total, order at, name, email and status. When the row is clicked on the complete order details are displayed.
 <img src="https://i.imgur.com/8Sp0i4T.jpg" alt="Todays-orders" target="_blank" rel="noopener" width="850">   
-* Order Details/Status Update - The order details display the order info and status which can be updated by store owner to order recieved (default), order cooking, out for delivery and delivered. When order is updated to delivered the order is moved from the active table in the order dashboard to completed.
+
+#### Order Details/Status Update 
+- The order details display the order info and status which can be updated by store owner to order recieved (default), order cooking, out for delivery and delivered. When order is updated to delivered the order is moved from the active table in the order dashboard to completed.
 <img src="https://i.imgur.com/nCuPW86.jpg" alt="order-details" target="_blank" rel="noopener" width="850"> 
-* Order History - The Order history allows the store owner the ability to see all orders and has the ability to serach all orders for the name, id, email, status and ordered on that way if a custome complains the owner can search his order and pull up the order information.
+
+#### Order History 
+- The Order history allows the store owner the ability to see all orders and has the ability to serach all orders for the name, id, email, status and ordered on that way if a custome complains the owner can search his order and pull up the order information.
 <img src="https://i.imgur.com/z37vnXk.jpg" alt="all-orders" target="_blank" rel="noopener" width="850"> 
 
 ### Django All Auth
-* Sign Up - The sign up allows new users to register and create a profile by completing the registration form.
+#### Sign Up 
+- The sign up allows new users to register and create a profile by completing the registration form.
 <img src=" https://i.imgur.com/njjW3Nn.jpg" alt="sign_up" target="_blank" rel="noopener" width="850"> 
-* Login - Allows registered users the ability to sign in. 
+
+#### Login 
+- Allows registered users the ability to sign in. 
 <img src="https://i.imgur.com/twKmNXL.jpg" alt="login" target="_blank" rel="noopener" width="850"> 
-* Forgot Password - Allows users the ability to reset their password.
-* Logout - Allows the users to logout.
-* Back to Top - Features on the right hand side of the screen and allows the users the ability to return back to top of the screen.
+
+#### Forgot Password 
+- Allows users the ability to reset their password.
+
+#### Logout 
+- Allows the users to logout.
+
+### Back to Top 
+- Features on the right hand side of the screen and allows the users the ability to return back to top of the screen.
 
 ## Future Development
-* Order Delivery tracker - Allows useres the ability to track their order 
-* Apple & Google Pay - Allows the users to pay using Apple pay or Google Pay
-* Social Account Login feature - Allows user the ability to sign in with their social accounts such as facebook
-* Voting buttons - Allows the users the ability to vote if they like the custom burger
+* Order Delivery tracker - Allows useres the ability to track their order. 
+* Apple & Google Pay - Allows the users to pay using Apple pay or Google Pay.
+* Social Account Login feature - Allows user the ability to sign in with their social accounts such as facebook.
+* Voting buttons - Allows the users the ability to vote if they like the custom burger. After so many votes the burger is then addded to the main menu.
+* Functionality in the custom burgers to allow/restrict users the ability to double up on burgers for an additional price. 
 
 ------
 # Database Structure

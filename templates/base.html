@@ -86,14 +86,14 @@
                     </li>
                     {% if request.user.is_superuser %}
                     <li class="list-inline-item dropdown">
-                        <a class="text-white nav-link" href="" id="user-options" data-toggle="dropdown"
+                        <a class="text-white nav-link" href="" id="superuser-options" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
                             <div class="text-center">
                                 <div><i class="fas fa-users-cog fa-lg"></i></div>
                                 <p class="my-0">Admin</p>
                             </div>
                         </a>
-                        <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                        <div class="dropdown-menu border-0" aria-labelledby="superuser-options">
                             <a href="{% url 'add_product' %} " class="dropdown-item">Add Product</a>
                             <a href="{% url 'dashboard' %}" class="dropdown-item">Today's Orders</a>
                             <a href="{% url 'all_orders' %}" class="dropdown-item">Order History</a>
@@ -101,14 +101,14 @@
                     </li>
                     {% endif %}
                     <li class="list-inline-item dropdown">
-                        <a class="text-white nav-link" href="" id="user-options" data-toggle="dropdown"
+                        <a class="text-white nav-link" href="" id="user-option" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
                             <div class="text-center">
                                 <div><i class="fas fa-user fa-lg"></i></div>
                                 <p class="my-0">My Account</p>
                             </div>
                         </a>
-                        <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                        <div class="dropdown-menu border-0" aria-labelledby="user-option">
                             {% if request.user.is_authenticated %}
                             <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
                             <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
