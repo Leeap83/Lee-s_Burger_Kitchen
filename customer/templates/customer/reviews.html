@@ -3,6 +3,7 @@
 
 {% block content %}
 <section class="review-hero" id="hero">
+    <h2 class="screen_reader-only">Hero Image</h2>
     <div class="container"></div>
 </section>
 <section class="reviews bg-white">
@@ -18,7 +19,7 @@
                 </div>
             </div>
             <div class="col-12 col-md-2 col-lg-2 justify-content-md-end">
-                <a href="{% url 'home' %}" class="btn btn-lg m-2 btn-secondary" type="button">Close</a>
+                <a href="{% url 'home' %}" class="btn btn-lg m-2 btn-secondary">Close</a>
             </div>       
         </div>
         <div class="row user-review">
@@ -40,7 +41,6 @@
                                 </a>
                             </h4>
                         </div>
-
                         <div id="collapse{{ rev.id }}" class="collapse" aria-labelledby="heading{{ rev.id }}" data-parent="#accordion">
                             <div class="card-body">
                                 <p class="card-text text-muted">Comment: {{ rev.comment }}</p>

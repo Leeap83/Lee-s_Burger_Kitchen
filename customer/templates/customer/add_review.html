@@ -3,6 +3,7 @@
 
 {% block content %}
 <section class="review-hero" id="hero">
+    <h2 class="screen_reader-only">Hero Image</h2>
     <div class="container"></div>
 </section>
 <section class="reviews bg-white">
@@ -18,19 +19,20 @@
                 </div>
             </div>
             <div class="col-12 col-md-2 col-lg-2 justify-content-md-end">
-                <a href="{% url 'reviews' %}" class="btn btn-lg m-2 btn-secondary" type="button">Close</a>
+                <a href="{% url 'reviews' %}" class="btn btn-lg m-2 btn-secondary">Close</a>
             </div>
         </div>
         <div class="row">
-        <div class="col-12 col-md-6 col-lg-6 offset-lg-3">
-            <p>Username: {{ user.username }}</p>
-                <form action="" method="POST" class="form mb-2">
-                {% csrf_token %}
-                {{ form|crispy }}
-                <div>
-                    <button class="btn btn-secondary btn-lg" type="submit">Add Review</button>
-                </div>
-            </form>
+            <div class="col-12 col-md-6 col-lg-6 offset-lg-3">
+                <p>Username: {{ user.username }}</p>
+                <form action="#" method="POST" class="form mb-2">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <div>
+                        <button class="btn btn-secondary btn-lg" type="submit">Add Review</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </section>

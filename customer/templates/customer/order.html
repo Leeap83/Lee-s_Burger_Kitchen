@@ -12,14 +12,14 @@
 {% block content %}
 <section class="container-fluid bg-white">
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <a href="{% url 'home' %}" class="btn btn-lg m-2 btn-secondary" type="button">Close</a>
+        <a href="{% url 'home' %}" class="btn btn-lg m-2 btn-secondary">Close</a>
     </div>
     <div class="col-12 col-md-8 col-lg-6 offset-lg-4">
         <h2 class="sub-headline text-black ">Place An Order</h2>
     </div>
     <div class="row">
         <div class="col-md-12 col-sm-12 p-4">
-                <div class="pt-5">
+            <div class="pt-5">
                     <h2><strong>Bites</strong></h2>
                     {% for item in bites %}
                     <div class="row">
@@ -67,7 +67,6 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
                                 <div class="col-12">
                                     <input type="submit" class="btn btn-lg m-2 btn-secondary" value="Add to Cart">
                                 </div>
@@ -77,9 +76,9 @@
                     </div>
                     <hr>
                 {% endfor %}
-                </div>
+            </div>
 
-                <div class="pt-5">
+            <div class="pt-5">
                     <h2><strong>Beef Burgers</strong></h2>
                     {% for item in beef %}
                     <div class="row">
@@ -128,7 +127,6 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
                                 <div class="col-12">
                                     <input type="submit" class="btn btn-lg m-2 btn-secondary" value="Add to Cart">
                                 </div>
@@ -138,9 +136,9 @@
                     </div>
                     <hr>
                     {% endfor %}
-                </div>
+            </div>
 
-                <div class="pt-5">
+            <div class="pt-5">
                     <h2><strong>Chicken Burgers</strong></h2>
                     {% for item in chicken %}
                     <div class="row">
@@ -188,7 +186,6 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
                                 <div class="col-12">
                                     <input type="submit" class="btn btn-lg m-2 btn-secondary" value="Add to Cart">
                                 </div>
@@ -198,9 +195,9 @@
                     </div>
                     <hr>
                     {% endfor %}
-                </div>
+            </div>
 
-                <div class="pt-5">
+            <div class="pt-5">
                     <h2><strong>Vegetarian Burgers</strong></h2>
                     {% for item in vegie %}
                     <div class="row">
@@ -248,7 +245,6 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
                                 <div class="col-12">
                                     <input type="submit" class="btn btn-lg m-2 btn-secondary" value="Add to Cart">
                                 </div>
@@ -258,9 +254,9 @@
                     </div>
                     <hr>
                     {% endfor %}
-                </div>
+            </div>
 
-                <div class="pt-5">
+            <div class="pt-5">
                     <h2><strong>Sides & Fries</strong></h2>
                     {% for item in sides %}
                     <div class="row">
@@ -308,7 +304,6 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
                                 <div class="col-12">
                                     <input type="submit" class="btn btn-lg m-2 btn-secondary" value="Add to Cart">
                                 </div>
@@ -318,9 +313,9 @@
                     </div>
                     <hr>
                     {% endfor %}
-                </div>
+            </div>
 
-                <div class="pt-5">
+            <div class="pt-5">
                     <h2><strong>Sauces</strong></h2>
                     {% for item in sauces %}
                     <div class="row">
@@ -368,7 +363,6 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
                                 <div class="col-12">
                                     <input type="submit" class="btn btn-lg m-2 btn-secondary" value="Add to Cart">
                                 </div>
@@ -378,8 +372,7 @@
                     </div>
                     <hr>
                     {% endfor %}
-                </div>
-            </form>
+            </div>
         </div>
     </div>
     <div class="btt-button rounded-0 d-grid gap-2 d-md-flex justify-content-md-end">
@@ -388,8 +381,6 @@
         </a>
     </div>
 </section>
-
-
 {% endblock %}
 
 {% block postloadjs %}
