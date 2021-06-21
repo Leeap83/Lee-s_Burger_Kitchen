@@ -7,7 +7,10 @@ The Freeformatter HTML Validator and W3C CSS Validator were used to validate eve
 All CSS files were tested using [CSS Validator](http://jigsaw.w3.org/css-validator/) code passed validation [Results](documents/docs/css-results.pdf).
 
 ### HTML
-All the HTML files were tested through [HTML Validator](https://validator.w3.org/). A number of errors showed but this was becuase the validator does not recognize Jinja2 templating language. There were also few minor errors regarding target="_blank" on some images on the index page which was removed from the code. Apart from that, no other errors were found across the html pages.
+All the HTML files were tested through [HTML Validator](https://validator.w3.org/). Becuase the validator does not recognize Jinja2 templating language the base template was coppied across and the child pages were pastied into the block content section for all pages. There were few errors displayed for Bad Value which can be ignored as this was due to the jinja templates. Other warnings/errors were found:
+- Target="_blank" on some images on the index page which was removed from the code. 
+- type="button" on the close button on all pages which were removed.
+- No heding element on the hero image sections h2 were added and given class of screen-reader-only and ccs style of dispaly:None. Apart from that, no other errors were found across the html pages.
 
 ### Javascript
 All the JS files and scripts were tested through [JSHint](https://jshint.com/), minor errors where semi colons were missing was highlighted and rectified.
