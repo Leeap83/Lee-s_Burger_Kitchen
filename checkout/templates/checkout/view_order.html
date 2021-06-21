@@ -13,7 +13,7 @@
 <div class="container-fluid mb-2 bg-white">
     <div class="container-fluid bg-white">
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-            <a href="{% url 'dashboard' %}" class="btn btn-lg m-2 btn-secondary" type="button">Close</a>
+            <a href="{% url 'dashboard' %}" class="btn btn-lg m-2 btn-secondary">Close</a>
         </div>
     </div>
     <section class="our-story bg-white">
@@ -51,7 +51,7 @@
                             <p class="text-muted mb-0">Order Status:</p>
                         </div>
                         <div class="col-12 col-md-4">
-                            <form action="" method="POST">
+                            <form action="#" method="POST">
                                 {% csrf_token %}
                                 {{ form|crispy }}
                                 <div>

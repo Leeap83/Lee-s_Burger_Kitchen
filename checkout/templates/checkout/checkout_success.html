@@ -12,12 +12,11 @@
 {% block content %}
 <div class="container-fluid bg-white">
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <a href="{% url 'home' %}" class="btn btn-lg m-2 btn-secondary" type="button">Close</a>
+        <a href="{% url 'home' %}" class="btn btn-lg m-2 btn-secondary">Close</a>
     </div>
 </div>
 <div class="container-fluid mb-2 bg-white">
     <div class="row">
-        
         <div class="col-12 col-md-8 col-lg-8 offset-lg-2">
             <h2 class="text-black text-center sub-headlines">Nice One!</h2>
             <p class="text-black">Thank you for your order, your order details are below. 
@@ -49,7 +48,6 @@
                         <p class="text-muted">{{ order.created_on }}</p>
                     </div>
                 </div>
-
                 <div class="row">
                     <div class="col">
                         <p><strong>Order Details</strong></p>
@@ -65,13 +63,11 @@
                         </div>
                     </div>
                 {% endfor %}
-                
                 <div class="row">
                     <div class="col mt-2">
                         <p><strong>Delivery Info</strong></p>
                     </div>
                 </div>
-
                 <div class="row">
                     <div class="col-12 col-md-4">
                         <p class="text-muted mb-0">Name:</p>
@@ -80,7 +76,6 @@
                         <p class="text-muted mb-0">{{ order.name }}</p>
                     </div>
                 </div>
-
                 <div class="row">
                     <div class="col-12 col-md-4">
                         <p class="text-muted mb-0">Street</p>
@@ -89,7 +84,6 @@
                         <p class="text-muted mb-0">{{ order.street }}</p>
                     </div>
                 </div>
-
                 <div class="row">
                     <div class="col-12 col-md-4">
                         <p class="text-muted mb-0">Town or City</p>
@@ -98,7 +92,6 @@
                         <p class="text-muted mb-0">{{ order.town_or_city }}</p>
                     </div>
                 </div>
-
                 <div class="row">
                     <div class="col-12 col-md-4">
                         <p class="text-muted mb-0">Postcode</p>
@@ -117,7 +110,6 @@
                     </div>
                 </div>
                 {% endif %}
-
                 <div class="row">
                     <div class="col-12 col-md-4">
                         <p class="text-muted">Phone Number</p>
@@ -126,13 +118,11 @@
                         <p class="text-muted">{{ order.phone_number }}</p>
                     </div>
                 </div>
-
                 <div class="row">
                     <div class="col">
                         <p><strong>Billing Info</strong></p>
                     </div>
                 </div>
-
                 <div class="row">
                     <div class="col-12 col-md-4">
                         <p class="text-muted mb-0">Order Total</p>
@@ -141,7 +131,6 @@
                         <p class="text-muted mb-0">£{{ order.order_total }}</p>
                     </div>
                 </div>
-
                 <div class="row">
                     <div class="col-12 col-md-4">
                         <p class="text-muted mb-0">Delivery Cost</p>
@@ -150,7 +139,6 @@
                         <p class="text-muted mb-0">£{{ order.delivery_cost }}</p>
                     </div>
                 </div>
-
                 <div class="row">
                     <div class="col-12 col-md-4">
                         <p class="text-muted mb-0">Grand Total</p>
