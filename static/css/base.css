@@ -688,6 +688,10 @@ form {
     padding: 20px 15px;
 }
 
+.screen_reader-only{
+    display: none;
+}
+
 /* Media Queries */
 @media (max-width: 991px) {
 

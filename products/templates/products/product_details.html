@@ -8,7 +8,7 @@
 {% block content %}
 <div class="container-fluid bg-white">
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <a href="{% url 'products' %}" class="btn btn-lg m-2 btn-secondary" type="button">Close</a>
+        <a href="{% url 'products' %}" class="btn btn-lg m-2 btn-secondary">Close</a>
     </div>
     <div class="row">
         <div class="col-12 col-md-6 col-lg-4 offset-lg-4">
@@ -36,7 +36,7 @@
                     </div>
                 {% endif %}
                 <p class="loud text-black"><strong>Price: </strong>£{{ product.price }}</p>
-                <p class="text-muted text-black"><strong>Category: </strong>{{ product.category.friendly_name  }}</strong>
+                <p class="text-muted text-black"><strong>Category: </strong>{{ product.category.friendly_name  }}</p>
                 <h4><strong>Description: </strong></h4>
                 <p class="text-black">{{ product.description }}</p>
                 <h4><strong>Ingredients: </strong></h4>
@@ -75,7 +75,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    
 
                         <div class="col-12">
                             <a href="{% url 'products' %}" class="btn btn-lg btn-secondary">

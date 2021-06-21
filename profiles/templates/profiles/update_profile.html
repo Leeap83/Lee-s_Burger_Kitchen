@@ -23,8 +23,8 @@
         <h2 class="text-center"><strong>Update Profile Information</strong></h2>
         <hr>
     </div>
-    <form class="mt-3 text-black" action="{% url 'profile' %}" method="POST" enctype="multipart/form-data" 
-    class="btn btn-secoundary" id="profile-update-form">
+    <form class="mt-3 text-black btn btn-secoundary" action="{% url 'profile' %}" method="POST" enctype="multipart/form-data" 
+    id="profile-update-form">
     {% csrf_token %}
         <div class="row">
             <div class="col-12 col-lg-6">
